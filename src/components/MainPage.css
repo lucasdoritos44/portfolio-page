@@ -1,0 +1,272 @@
+/*MainPage Welcome message */
+
+.mainpage__wrapper{
+    width:100vw;
+    height:100vh;
+    overflow:hidden;
+  }
+
+  .mainpage__welcome{
+    display:flex;
+    width:100%;
+    height:100%;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--first);
+    position: relative;
+  }
+  
+  .loader{
+    position: relative;
+  }
+  
+  .loader::before{
+    content: '';
+    position: absolute;
+    top:0;
+    right:0;
+    width:2px;
+    height:100%;
+    background-color: var(--second);
+    animation: blinkCursor 1s steps(3) infinite;
+  }
+  
+
+  
+  .loader h2{
+    position: relative;
+    color:var(--second);
+    letter-spacing: 5px;
+    font-size:4em;
+    text-transform: uppercase;
+    animation: typing 3.5s steps(6) forwards;
+    overflow: hidden;
+  }
+
+  .cursor__animation{
+    position: relative;
+  }
+
+  .cursor__animation::before{
+    content: '';
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width:2px;
+    height:100%;
+    background-color: var(--second);
+    animation: strechAndHide 0.7s ease-in forwards;
+  }
+
+  .cursor__animation h2{
+    font-size:4em;
+    opacity: 0;
+  }
+
+  intro__wrapper{
+    width:100vw;
+    height:100vh;
+  }
+
+  /*2nd phase*/
+
+  .second__phase-rect{
+    position: absolute;
+    top:25%;
+    right:-5%;
+    transform: rotate(30deg);
+    width:50vw;
+    height:150vh;
+    background-color: var(--fifth);
+    animation: openSecondPhase 1.5s ease-out;
+  }
+  
+  .second__phase-menu{
+    position: absolute;
+    top:-15%;
+    right:-15%;
+    transform: rotate(30deg);
+    width:50vw;
+    height:40vh;
+    background-color: var(--sixth);
+    animation: openSecondPhase-2 1.5s ease-in-out ;
+  }
+
+  /*show introduction */
+  .intro__first-line{
+    position: absolute;
+    top:15%;
+    left:15%;
+    overflow: hidden;
+  }
+
+  .intro__second-line{
+    position: absolute;
+    top:25%;
+    left:20%;
+    overflow: hidden;
+  }
+
+  .intro__third-line{
+    position: absolute;
+    top:50%;
+    left:15%;
+    overflow: hidden;
+  }
+
+  .intro__first-line-position{
+    position: relative;
+  }
+  
+  .intro__second-line-position{
+    position: relative;
+  }
+  
+  .intro__first-line-position h3{
+    font-size:2em;
+    width:100%;
+    color: var(--second);
+    animation: fadeFromLeft 0.7s ease-out both 1s;
+  }
+
+  .intro__second-line-position h2{
+    color: var(--third);
+    width:100%;
+    font-size:2.5em;
+    animation: fadeFromRight 0.7s ease-out both 1.4s;
+  }
+
+  .intro__third-line-position h3{
+    display:flex;
+    font-size:2em;
+    width:100%;
+    color: var(--forth);
+    animation: fadeFromBottom 0.7s ease-out both 3.5s;
+  }
+
+
+  .intro__first-line-position::before{
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    width:2px;
+    height:100%;
+    background-color: var(--second);
+    animation: strechToCenter 3s ease-in both;
+  }
+
+  .intro__second-line-position::before{
+    content:'';
+    position: absolute;
+    top:0;
+    right:0;
+    width:2px;
+    height:100%;
+    background-color:var(--third);
+    animation: strechToCenter 3s ease-in both 0.5s;
+  }
+
+
+  /*Animations*/
+  
+  @keyframes typing {
+    0%,90%{
+      width:0;
+    }
+    35%,65%{
+      width:247.86px;
+    }
+    100%{
+        width:0;
+        display:none;
+    }
+  }
+
+  @keyframes blinkCursor {
+    0%,75%{
+      opacity: 1;
+    }
+    76%,100%{
+      opacity:0;
+    }
+  }
+
+  @keyframes strechAndHide{
+    0%{
+      height:100%;
+      opacity:1;
+    }
+    100%{
+      height:0%;
+      opacity:0;
+    }
+  }
+
+  @keyframes fadeFromLeft{
+    0%{
+      transform: translateX(-100%);
+    }
+    100%{
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeFromRight {
+    0%{
+      transform: translateX(100%);
+    }
+    100%{
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeFromBottom {
+    0%{
+      transform: translateY(100%);
+    }
+    100%{
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes strechToCenter{
+    0%{
+      opacity:0;
+      transform: scaleY(0);
+    }
+    15%{
+      height:100%;
+      opacity:1;
+      transform: scaleY(100%);
+    }
+    85%{
+      height:100%;
+      opacity:1;
+      transform: scaleY(100%);
+    }
+    100%{
+      height:0;
+      opacity:0;
+      transform: scaleY(0);
+    }
+  }
+
+  @keyframes openSecondPhase {
+    0%{
+      height:0;
+    }
+    100%{
+      height:150%;
+    }
+  }
+
+  @keyframes openSecondPhase-2 {
+    0%{
+      height:0;
+    }
+    100%{
+      height:40vh;
+    }
+  }
