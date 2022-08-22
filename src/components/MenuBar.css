@@ -1,0 +1,173 @@
+.animated-menu-active{
+    position: absolute;
+    top:0;
+    left:0;
+    height:10%;
+    width:75%;
+    z-index:10;
+  }
+  
+  .animated-menu-active ul{
+    display:flex;
+    padding:0rem 3rem;
+    list-style: none;
+    animation:activeMenu 0.8s ease-out;
+  }
+  
+  .animated-menu-active ul li{
+    padding:1rem 5rem;
+    font-size:20px;
+    color: var(--forth);
+    transition: 0.5s;
+  }
+  
+  .animated-menu-active ul li:hover{
+    cursor:pointer;
+    font-size:22px;
+    transition: 0.5s;
+    color:white;
+  }
+  
+  .animated-menu-disactive{
+    position: absolute;
+    top:0;
+    left:0;
+    height:10%;
+    width:75%;
+    z-index:10;
+  }
+  
+  .animated-menu-disactive ul{
+    display:flex;
+    padding:0rem 3rem;
+    list-style: none;
+    animation: disactiveMenu 0.8s ease-out both;
+  }
+  
+  .animated-menu-disactive ul li{
+    padding:1rem 5rem;
+    font-size:18px;
+    color: var(--forth);
+    transition: 0.5s;
+  }
+  
+  
+  .animated-menu-disactive ul li:hover{
+    cursor:pointer;
+    font-size:22px;
+    transition: 0.5s;
+  }
+
+  /*hamburger menu*/
+  .hamburger-menu{
+    position: absolute;
+    width:60px;
+    height:45px;
+    top:25%;
+    left:60%;
+    display:flex;
+    transform: rotate(60deg);
+    transition: 1s;
+  }
+
+ .open {
+  transform: rotate(90deg);
+  transition:1s;
+  animation:openHamburger 1s ease-out;
+ }
+
+ .hamburger-1-open{
+  transform: rotate(45deg) translateY(-8px) translateX(15px);
+  transition: 1s;
+ }
+
+ .hamburger-2-open{
+  animation: hamburger2AnimationOpen 1s ease-out both;
+ }
+
+ .hamburger-3-open{
+  transform: rotate(-45deg) translateY(-2px) translateX(-10px);
+  transition: 1s;
+ }
+
+ .hamburger-1-close{
+  transform: rotate(0deg) translateY(0px) translateX(0px);
+  transition: 1s;
+ }
+
+ .hamburger-2-close{
+  animation: hamburger2AnimationClose 1s ease-out both;
+ }
+
+ .hamburger-3-close{
+  transform: rotate(0deg) translateY(0px) translateX(0px);
+  transition: 1s;
+ }
+
+  .hamburger-menu:hover{
+    cursor:pointer;
+  }
+
+  .hamburger-1{
+    width:3px;
+    height: 100%;
+    background-color: white;
+    margin-left:10px;
+    
+  }
+  .hamburger-2{
+    width:3px;
+    height: 100%;
+    background-color: white;
+    margin-left:10px;
+  }
+  .hamburger-3{
+    width:3px;
+    height: 100%;
+    background-color: white;
+    margin-left:10px;
+  }
+
+  
+  @keyframes hamburger2AnimationOpen{
+    0%{
+      opacity:1;
+    }
+    20%, 100%{
+      opacity:0;
+    }
+  }
+
+  @keyframes hamburger2AnimationClose{
+    0%{
+      opacity:0;
+    }
+    35%{
+      opacity:0;
+    }
+ 100%{
+      opacity:1;
+    }
+  }
+
+  @keyframes disactiveMenu{
+    0%{
+      transform: translateY(0);
+      opacity:1;
+    }
+    100%{
+      transform: translateY(50px);
+      opacity:0;
+    }
+  }
+
+  @keyframes activeMenu{
+    0%{
+      transform: translateY(-50px);
+      opacity:0;
+    }
+    100%{
+      transform: translateY(0);
+      opacity:1;
+    }
+  }

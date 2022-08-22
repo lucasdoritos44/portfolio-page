@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./MainPage.css";
 
 import FbLogo from "../assets/facebook.ico";
@@ -7,18 +8,16 @@ import GithubLogo from "../assets/github.png";
 import LinkedinLogo from "../assets/linkedin.ico";
 import TwitterLogo from "../assets/twitter.ico";
 
-import { AiOutlineArrowDown } from "react-icons/ai";
-import { AiOutlineArrowLeft } from "react-icons/ai";
-import { AiOutlineArrowRight } from "react-icons/ai";
-import { AiOutlineArrowUp } from "react-icons/ai";
+
+import LoadingCounter from "../components/LoadingCounter";
+import MenuBar from "../components/MenuBar";
+import ArrowsNavigation from "../components/ArrowsNavigation";
 
 const MainPage = () => {
   const [hideWelcome, setHideWelcome] = useState(false);
   const [showIntro, setShowIntro] = useState(false);
   const [showSecondPhase, setShowSecondPhase] = useState(false);
-  const [showAnimatedMenu, setShowAnimatedMenu] = useState(false);
-  const [showAnimatedMenuContent, setShowAnimatedMenuContent] = useState(false);
-  const [keyAnimation, setKeyAnimation] = useState('')
+  const [keyAnimation, setKeyAnimation] = useState("");
 
   useEffect(() => {
     setTimeout(() => {
@@ -32,35 +31,44 @@ const MainPage = () => {
     }, 7000);
   }, [hideWelcome, showIntro, showSecondPhase]);
 
-  const toggleNavMenu = () => {
-    setShowAnimatedMenu(!showAnimatedMenu);
-    setShowAnimatedMenuContent(true);
-  };
+  let navigate = useNavigate();
 
   document.onkeydown = checkKey;
 
-function checkKey(e) {
-
+  function checkKey(e) {
     e = e || window.event;
 
-    if (e.keyCode == '38') {
-      setKeyAnimation('up')
+    if (e.keyCode == "38") {
+      setKeyAnimation("up");
+      setTimeout(() => {
+        navigate("/bio");
+      }, 2000);
+    } else if (e.keyCode == "40") {
+      setKeyAnimation("down");
+      setTimeout(() => {
+        navigate("/contact");
+      }, 2000);
+    } else if (e.keyCode == "37") {
+      setKeyAnimation("left");
+      setTimeout(() => {
+        navigate("/projects");
+      }, 2000);
+    } else if (e.keyCode == "39") {
+      setKeyAnimation("right");
+      setTimeout(() => {
+        navigate("/idk");
+      }, 2000);
     }
-    else if (e.keyCode == '40') {
-      setKeyAnimation('down')
-    }
-    else if (e.keyCode == '37') {
-      setKeyAnimation('left')
-    }
-    else if (e.keyCode == '39') {
-      setKeyAnimation('right')
-    }
-}
+  }
 
-console.log(keyAnimation)
 
   return (
     <div class="mainpage__wrapper">
+      <div class={`${keyAnimation === "up" ? "cover__up" : ""}`} />
+      <div class={`${keyAnimation === "down" ? "cover__down" : ""}`} />
+      <div class={`${keyAnimation === "left" ? "cover__left" : ""}`} />
+      <div class={`${keyAnimation === "right" ? "cover__right" : ""}`} />
+      {keyAnimation && <LoadingCounter side={keyAnimation} class="counter" />}
       <div class="mainpage__welcome">
         {!hideWelcome && (
           <div class="loader">
@@ -74,41 +82,9 @@ console.log(keyAnimation)
         )}
         {showIntro && (
           <div class="intro__wrapper">
-            <div
-              className={`animated-menu-${
-                showAnimatedMenu ? "active" : "disactive"
-              }`}
-            >
-              {showAnimatedMenuContent && (
-                <ul>
-                  <li>My projects</li>
-                  <li>Bio</li>
-                  <li>Contact</li>
-                  <li>123</li>
-                </ul>
-              )}
-            </div>
+            <MenuBar />
             <div class="second__phase">
-              <div class="second__phase-rect">
-                <div class="second__phase-rect_p">
-                  <p class="">Select the arrow to go to:</p>
-                </div>
-                <p class="arrow__up-p">Bio</p>
-                <AiOutlineArrowUp class={`arrow__up ${keyAnimation === 'up' ? 'pressKey' : ''}`} />
-                <p class="arrow__down-p">Contact</p>
-                <AiOutlineArrowDown class={`arrow__down ${keyAnimation === 'down' ? 'pressKey' : ''}`} />
-                <p class="arrow__left-p">Projects</p>
-                <AiOutlineArrowLeft class={`arrow__left ${keyAnimation === 'left' ? 'pressKey' : ''}`} />
-                <p class="arrow__right-p">123</p>
-                <AiOutlineArrowRight class={`arrow__right ${keyAnimation === 'right' ? 'pressKey' : ''}`} />
-              </div>
-              <div class="second__phase-menu">
-                <div onClick={toggleNavMenu} class="hamburger-menu">
-                  <div class="hamburger-1"></div>
-                  <div class="hamburger-2"></div>
-                  <div class="hamburger-3"></div>
-                </div>
-              </div>
+              <ArrowsNavigation keyAnimation={keyAnimation} upArrow="Bio" downArrow="Contact" leftArrow="Projects" rightArrow="123"/>
               <div class="second__phase-link-bar">
                 <div className="second__phase-link-bar_contact">
                   <h2>Contact me</h2>
