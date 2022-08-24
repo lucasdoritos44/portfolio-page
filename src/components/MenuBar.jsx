@@ -1,6 +1,7 @@
 import "./MenuBar.css";
 
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const MenuBar = () => {
   const [showAnimatedMenu, setShowAnimatedMenu] = useState(false);
@@ -18,10 +19,10 @@ const MenuBar = () => {
       >
         {showAnimatedMenuContent && (
           <ul>
-            <li>My projects</li>
-            <li>Bio</li>
-            <li>Contact</li>
-            <li>123</li>
+            <Link to="/projects"><li>My projects</li></Link>
+            <Link to="/bio"><li>Bio</li></Link>
+            <Link to="/contact"><li>Contact</li></Link>
+            <Link to="/skills"><li>Skills</li></Link>
           </ul>
         )}
       </div>

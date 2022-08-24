@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import MenuBar from "../components/MenuBar";
 import ArrowsNavigation from "../components/ArrowsNavigation";
 
-import "./Projects.css";
+import "./Skills.css";
 
 import { useNavigate } from "react-router-dom";
 
@@ -33,31 +33,31 @@ const Contact = () => {
     } else if (e.keyCode == "37") {
       setKeyAnimation("left");
       setTimeout(() => {
-        navigate("/contact");
+        navigate("/projects");
       }, 2000);
     } else if (e.keyCode == "39") {
       setKeyAnimation("right");
       setTimeout(() => {
-        navigate("/skills");
+        navigate("/contact");
       }, 2000);
     }
   }
 
   return (
-    <div class="contact__wrapper3">
-      <div class="cover__animation3" />
+    <div class="contact__wrapper5">
+      <div class="cover__animation5" />
       <div class={`${keyAnimation === "up" ? "cover__up" : ""}`} />
       <div class={`${keyAnimation === "down" ? "cover__down" : ""}`} />
-      <div class={`${keyAnimation === "left" ? "cover__left-fixed" : ""}`} />
-      <div class={`${keyAnimation === "right" ? "cover__right" : ""}`} />
+      <div class={`${keyAnimation === "left" ? "cover__left" : ""}`} />
+      <div class={`${keyAnimation === "right" ? "cover__right-fixed" : ""}`} />
       {keyAnimation && <LoadingCounter side={keyAnimation} class="counter" />}
       <MenuBar />
       <ArrowsNavigation
         keyAnimation={keyAnimation}
         upArrow="Bio"
         downArrow="Back"
-        leftArrow="Contact"
-        rightArrow="Skills"
+        leftArrow="Projects"
+        rightArrow="Contact"
       />
     
     </div>

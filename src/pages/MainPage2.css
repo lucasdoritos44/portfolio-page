@@ -1,0 +1,283 @@
+  .intro__wrapper{
+    width:100vw;
+    height:100vh;
+  }
+
+
+  .second__phase-menu{
+    position: absolute;
+    top:-15%;
+    right:-15%;
+    transform: rotate(30deg);
+    width:60vw;
+    height:40vh;
+    background-color: var(--sixth);
+    animation: openSecondPhase-2 1.5s ease-in-out ;
+    z-index:3;
+    
+  }
+
+  .second__phase-link-bar2{
+    width:58%;
+    height:12%;
+    position: absolute;
+    bottom:0;
+    left:0;
+    background-color: var(--second);
+    z-index:0;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .second__phase-link-bar_contact2{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    width:250px;
+    height:100%;
+  }
+  
+  .second__phase-link-bar_contact2:hover{
+    cursor:pointer;
+    animation: bounce 1s infinite;
+    animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+  }
+  
+  .second__phase-link-bar_contact2 h2{
+    color:var(--first);
+  }
+
+  /*show introduction */
+  .intro__first-line2{
+    position: absolute;
+    top:15%;
+    left:15%;
+    overflow: hidden;
+  }
+
+  .intro__second-line2{
+    position: absolute;
+    top:25%;
+    left:20%;
+    overflow: hidden;
+  }
+
+  .intro__third-line2{
+    position: absolute;
+    top:50%;
+    left:15%;
+    overflow: hidden;
+  }
+
+  .intro__first-line-position2{
+    position: relative;
+  }
+  
+  .intro__second-line-position2{
+    position: relative;
+  }
+  
+  .intro__first-line-position2 h3{
+    font-size:2em;
+    width:100%;
+    color: var(--second);
+  }
+
+  .intro__second-line-position2 h2{
+    color: var(--third);
+    width:100%;
+    font-size:2.5em;
+  }
+
+  .intro__third-line-position2 h3{
+    display:flex;
+    font-size:2em;
+    width:100%;
+    color: var(--forth);
+  }
+
+  /*icons*/
+  .icon{
+    width:40px;
+    height:40px;
+    opacity:0.7;
+    margin:0 1rem;
+   
+  }
+
+  .icon:hover{
+    cursor:pointer;
+    animation: bounce 1s infinite;
+    opacity:1;
+  }
+
+  /*covering screen*/
+  .cover__up{ 
+    background-color: var(--forth);
+    position: absolute;
+    bottom: 0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    animation:coverUp 0.8s ease-out both;
+    z-index:20;
+  }
+
+  .cover__down{ 
+    background-color: var(--sixth);
+    position: absolute;
+    top: 0;
+    right:0;
+    width:100vw;
+    height:100vh;
+    animation:coverUp 0.8s ease-out both;
+    z-index:20;
+  }
+
+  .cover__left{ 
+    background-color: var(--fifth);
+    position: absolute;
+    bottom: 0;
+    right:0;
+    width:100vw;
+    height:100vh;
+    animation:coverUp 0.8s ease-out both;
+    z-index:20;
+  }
+
+  .cover__right{ 
+    background-color: var(--first);
+    position: absolute;
+    top: 0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    animation:coverUp 0.8s ease-out both;
+    z-index:20;
+  }
+
+  .counter{
+    z-index:20;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+  }
+
+  /*Animations*/
+  
+  @keyframes typing {
+    0%,90%{
+      width:0;
+    }
+    35%,65%{
+      width:247.86px;
+    }
+    100%{
+        width:0;
+        display:none;
+    }
+  }
+
+  @keyframes blinkCursor {
+    0%,75%{
+      opacity: 1;
+    }
+    76%,100%{
+      opacity:0;
+    }
+  }
+
+  @keyframes strechAndHide{
+    0%{
+      height:100%;
+      opacity:1;
+    }
+    100%{
+      height:0%;
+      opacity:0;
+    }
+  }
+
+  @keyframes fadeFromLeft{
+    0%{
+      transform: translateX(-100%);
+    }
+    100%{
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeFromRight {
+    0%{
+      transform: translateX(100%);
+    }
+    100%{
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeFromBottom {
+    0%{
+      transform: translateY(100%);
+    }
+    100%{
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes strechToCenter{
+    0%{
+      opacity:0;
+      transform: scaleY(0);
+    }
+    15%{
+      height:100%;
+      opacity:1;
+      transform: scaleY(100%);
+    }
+    85%{
+      height:100%;
+      opacity:1;
+      transform: scaleY(100%);
+    }
+    100%{
+      height:0;
+      opacity:0;
+      transform: scaleY(0);
+    }
+  }
+
+  @keyframes openSecondPhase {
+    0%{
+      height:0;
+    }
+    100%{
+      height:150%;
+    }
+  }
+
+
+  @keyframes bounce {
+    0%   { transform: scale(1,1)      translateY(0); }
+    10%  { transform: scale(1.1,.9)   translateY(0); }
+    25%  { transform: scale(.9,1.1)   translateY(-20px); }
+    50%  { transform: scale(1.05,.95) translateY(0); }
+    80%  { transform: scale(1,1)      translateY(-3px); }
+    100% { transform: scale(1,1)      translateY(0); }
+  }
+
+  @keyframes coverUp{
+    0%{
+      height:0%;
+      width:0%;
+    }
+    100%{
+      height: 100%;
+      width:100%;
+    }
+  }
+  
+

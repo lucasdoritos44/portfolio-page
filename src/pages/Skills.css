@@ -1,4 +1,4 @@
-.contact__wrapper3{
+.contact__wrapper5{
     width:100vw;
     height:100vh;
     background-color: var(--first);
@@ -6,34 +6,25 @@
     position: relative;
   }
   
-  .cover__animation3{
+  .cover__animation5{
     position:absolute;
-    bottom:0;
-    right:0;
+    top:0;
+    left:0;
     animation: openFromBottomLeft 1.5s ease-out both;
-    background-color: var(--fifth);
+    background-color: var(--first);
     z-index:100;
   }
   
-  .contact__form-h2{
-    font-size:44px;
-    color: var(--third);
-    position: absolute;
-    top:12%;
-    left:15%;
-  }
-  
-  .cover__left-fixed{ 
+  .cover__right-fixed{ 
     background-color: var(--sixth);
     position: absolute;
-    bottom: 0;
-    right:0;
+    top: 0;
+    left:0;
     width:100vw;
     height:100vh;
     animation:coverUp 0.8s ease-out both;
     z-index:20;
   }
-  
   
   @keyframes openFromBottomLeft{
       0%{

@@ -1,34 +1,41 @@
 .contact__wrapper{
-    width:100vw;
-    height:100vh;
-    background-color: var(--first);
-    overflow:hidden;
-    position: relative;
-    
+  width:100vw;
+  height:100vh;
+  background-color: var(--first);
+  overflow:hidden;
+  position: relative;
 }
 
 .cover__animation{
-    position:absolute;
-    top:0;
-    right:0;
-    animation: openFromBottomLeft 1s ease-out both;
-    background-color: var(--sixth);
-    z-index:100;
+  position:absolute;
+  top:0;
+  right:0;
+  animation: openFromBottomLeft 1.5s ease-out both;
+  background-color: var(--sixth);
+  z-index:100;
+}
+
+.contact__form-h2{
+  font-size:44px;
+  color: var(--third);
+  position: absolute;
+  top:12%;
+  left:15%;
 }
 
 
 /*contact form*/
 
-.contact__form form{
+form{
   position: absolute;
   top:20%;
   left:10%;
   width:40%;
-  height:50%;
+  height:60%;
   display:flex;
   flex-direction: column;
   justify-content: space-around;
-  padding:1.5rem;
+  padding:0 1.5rem 1rem 1.5rem;
 
   background: rgba( 66, 4, 79, 0.6 );
 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -38,21 +45,27 @@ border-radius: 10px;
 border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
+.input__group {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.names input{
+  width:17vw;
+}
+
 .form__name-inputs{
   display:flex;
   justify-content:space-between;
 }
 
-.input__group{
-  position: relative;
-}
-
-label{
-  position:absolute;
-  height: 100%;
-  left:0;
-  top:0;
-  padding:10px;
+label {
+  order: -1;
+  padding-left: 5px;
+  transition: all 0.2s ease-in;
+  transform: translate(5px, 30px);
+  pointer-events: none;
   cursor:text;
   color:var(--second);
 }
@@ -66,18 +79,76 @@ input, textarea{
   border-radius: 10px;
   font-size:15px;
   padding:0.8rem;
+  color:var(--second);
+  resize:none;
 }
 
-.form__name-inputs{
-  display:flex;
-}
-
-.input__message{
-  height:25vh;
+input:focus + label,
+textarea:focus + label,
+input:valid + label,
+textarea:valid + label
+{
+  transform: translate(-5px, -2px);
 }
 
 @keyframes openFromBottomLeft{
+  0%{
+    height:100%;
+    width:100%;
+  }
+  100%{
+    height: 0%;
+    width:0%;
+  }
+}
+.animated__button{
+  margin:0 auto;
+  width:200px;
+  height:50px;
+  border-radius:10px;
+  border:none;
+  color:var(--third);
+  font-size:16px;
+  background-color: var(--second);
+  cursor:pointer;
+  transition: 0.2s;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
+  -webkit-box-shadow: 12px 14px 45px 0px rgba(49, 3, 55, 0.7);
+-moz-box-shadow: 12px 14px 45px 0px rgba(49, 3, 55, 0.7);
+box-shadow: 12px 14px 45px 0px rgba(49, 3, 55, 0.7);
+}
+
+.animated__button:active{
+  background-color: var(--sixth);
+  color:var(--second);
+box-shadow: none;
+transform: translate(5px, 5px);
+}
+
+.button__clicked{
+  background: rgba( 122, 4, 99);
+  color:var(--second);
+  box-shadow:none;
+}
+
+.check__icon{
+  width:20px;
+  height:20px;
+  margin-left:10px;
+  fill: var(--second);
+  
+}
+
+
+@keyframes openFromBottomLeft{
     0%{
+      height:100%;
+      width:100%;
+    }
+    60%{
       height:100%;
       width:100%;
     }

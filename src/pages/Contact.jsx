@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import MenuBar from "../components/MenuBar";
 import ArrowsNavigation from "../components/ArrowsNavigation";
+import emailjs from '@emailjs/browser';
+import CheckIcon from '@mui/icons-material/Check';
+
 import "./Contact.css";
 
 import { useNavigate } from "react-router-dom";
@@ -9,8 +12,10 @@ import LoadingCounter from "../components/LoadingCounter";
 
 const Contact = () => {
   const [keyAnimation, setKeyAnimation] = useState("");
+  const [buttonClicked, setButtonClicked] = useState(false);
 
   let navigate = useNavigate();
+  const form = useRef()
 
   document.onkeydown = checkKey;
 
@@ -35,10 +40,27 @@ const Contact = () => {
     } else if (e.keyCode == "39") {
       setKeyAnimation("right");
       setTimeout(() => {
-        navigate("/idk");
+        navigate("/skills");
       }, 2000);
     }
   }
+
+
+  const formHandler = (e) => {
+    e.preventDefault();
+
+    setButtonClicked(true)
+
+    emailjs.sendForm('gmail44', 'template_g2w2k8s', form.current, 'IibAoOSaOIzPRpO8G')
+    .then((result) => {
+        console.log(result.text);
+        console.log('message sent')
+    }, (error) => {
+        console.log(error.text);
+    });
+
+    console.log('formSubmitted')
+  };
 
   return (
     <div class="contact__wrapper">
@@ -54,30 +76,34 @@ const Contact = () => {
         upArrow="Bio"
         downArrow="Back"
         leftArrow="Projects"
-        rightArrow="123"
+        rightArrow="Skills"
       />
-      <div class="contact__form">
-        <form>
-          <div class="form__name-inputs">
-            <div class="input__group">
-              <label htmlFor="first__name">First Name</label>
-              <input id="first__name" />
-            </div>
-            <div class="input__group">
-              <label html="surname">Surname</label>
-              <input id="surname" />
-            </div>
+      <h2 class="contact__form-h2">Get in touch</h2>
+      <form onSubmit={formHandler} ref={form}>
+        <div className="form__name-inputs">
+          <div class="input__group names">
+            <input type="text" name="first__name" required/>
+            <label>First Name</label>
           </div>
-          <div className="input__group">
-          <label htmlFor="email">Email</label>
-          <input id="email" />
+          <div class="input__group names">
+            <input type="text" name="second__name" required/>
+            <label>Second Name</label>
+            
           </div>
-          <div className="input__group">
-          <label htmlFor="message">Message</label>
-          <input id="message" class="input__message" />
-          </div>   
-        </form>
-      </div>
+          
+        </div>
+        <div class="input__group">
+          <input type="text" name="email" required/>
+          <label>Email</label>
+        </div>
+        <div class="input__group">
+          <textarea id="message" rows="8" name="message" required/>
+          <label>Message</label>
+        </div>
+        <button type="submit" class={`animated__button ${buttonClicked ? 'button__clicked' : ''}`}>{buttonClicked ? `Message Sent!` : 'Submit'}
+       {buttonClicked ? <CheckIcon color="white" class="check__icon"/> : ''}
+        </button>
+      </form>
     </div>
   );
 };

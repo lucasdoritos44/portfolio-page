@@ -56,7 +56,7 @@ const MainPage = () => {
     } else if (e.keyCode == "39") {
       setKeyAnimation("right");
       setTimeout(() => {
-        navigate("/idk");
+        navigate("/skills");
       }, 2000);
     }
   }
@@ -84,7 +84,12 @@ const MainPage = () => {
           <div class="intro__wrapper">
             <MenuBar />
             <div class="second__phase">
-              <ArrowsNavigation keyAnimation={keyAnimation} upArrow="Bio" downArrow="Contact" leftArrow="Projects" rightArrow="123"/>
+              <ArrowsNavigation
+               keyAnimation={keyAnimation} 
+               upArrow="Bio" 
+               downArrow="Contact" 
+               leftArrow="Projects"
+               rightArrow="Skills"/>
               <div class="second__phase-link-bar">
                 <div className="second__phase-link-bar_contact">
                   <h2>Contact me</h2>

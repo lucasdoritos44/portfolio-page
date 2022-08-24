@@ -4,7 +4,7 @@ import MainPage from './pages/MainPage'
 import Contact from './pages/Contact'
 import Projects from './pages/Projects'
 import Bio from './pages/Bio'
-import Idk from './pages/Idk'
+import Skills from './pages/Skills'
 import MainPage2 from './pages/MainPage2'
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
           <Route path="bio" element={<Bio />} />
           <Route path="contact" element={<Contact />} />
           <Route path="projects" element={<Projects />} />
-          <Route path="idk" element={<Idk />} />
+          <Route path="skills" element={<Skills />} />
           <Route path="main" element={<MainPage2 />} />
         </Routes>
       </BrowserRouter>
