@@ -19,7 +19,7 @@ const MenuBar = () => {
       >
         {showAnimatedMenuContent && (
           <ul>
-            <Link to="/projects"><li>My projects</li></Link>
+            <Link to="/projects" class='hamburger__bar-links'><li>My projects</li></Link>
             <Link to="/bio"><li>Bio</li></Link>
             <Link to="/contact"><li>Contact</li></Link>
             <Link to="/skills"><li>Skills</li></Link>

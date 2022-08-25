@@ -62,6 +62,8 @@ const Contact = () => {
     console.log('formSubmitted')
   };
 
+
+
   return (
     <div class="contact__wrapper">
       <div class="cover__animation" />

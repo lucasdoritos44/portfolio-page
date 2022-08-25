@@ -33,7 +33,35 @@
     animation:coverUp 0.8s ease-out both;
     z-index:20;
   }
+
+  .mySwiper{
+    width:1400px;
+    height:850px;
+    position: absolute;
+    top:5%;
+    left:-15%;
+    
+  }
   
+  .swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+  }
+
+
   
   @keyframes openFromBottomLeft{
       0%{
