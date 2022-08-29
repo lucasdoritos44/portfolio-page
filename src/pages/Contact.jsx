@@ -1,8 +1,8 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useReducer } from "react";
 import MenuBar from "../components/MenuBar";
 import ArrowsNavigation from "../components/ArrowsNavigation";
-import emailjs from '@emailjs/browser';
-import CheckIcon from '@mui/icons-material/Check';
+import emailjs from "@emailjs/browser";
+import CheckIcon from "@mui/icons-material/Check";
 
 import "./Contact.css";
 
@@ -10,12 +10,38 @@ import { useNavigate } from "react-router-dom";
 
 import LoadingCounter from "../components/LoadingCounter";
 
+const emailReducer = (state, action) => {
+  if (action.type === "USER_INPUT") {
+    return { value: action.val, isValid: /\S+@\S+\.\S+/.test(state.value) };
+  }
+  if (action.type === "INPUT_BLUR") {
+    return { value: state.value, isValid: /\S+@\S+\.\S+/.test(state.value)  };
+  }
+  return { value: "", isValid: false };
+};
+
 const Contact = () => {
   const [keyAnimation, setKeyAnimation] = useState("");
   const [buttonClicked, setButtonClicked] = useState(false);
+  const [formIsValid, setFormIsValid] = useState(false);
+
+  const [emailState, dispatchEmail] = useReducer(emailReducer, {
+    value: "",
+    isValid: null,
+  });
+
+
+
+  const emailChangeHandler = (event) => {
+    dispatchEmail({ type: "USER_INPUT", val: event.target.value });
+  };
+
+  const validateEmailHandler = () => {
+    dispatchEmail({ type: "INPUT_BLUR" });
+  };
 
   let navigate = useNavigate();
-  const form = useRef()
+  const form = useRef();
 
   document.onkeydown = checkKey;
 
@@ -45,24 +71,30 @@ const Contact = () => {
     }
   }
 
-
   const formHandler = (e) => {
     e.preventDefault();
 
-    setButtonClicked(true)
+    setButtonClicked(true);
 
-    emailjs.sendForm('gmail44', 'template_g2w2k8s', form.current, 'IibAoOSaOIzPRpO8G')
-    .then((result) => {
-        console.log(result.text);
-        console.log('message sent')
-    }, (error) => {
-        console.log(error.text);
-    });
+    emailjs
+      .sendForm(
+        "gmail44",
+        "template_g2w2k8s",
+        form.current,
+        "IibAoOSaOIzPRpO8G"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          console.log("message sent");
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
 
-    console.log('formSubmitted')
+    console.log("formSubmitted");
   };
-
-
 
   return (
     <div class="contact__wrapper">
@@ -84,26 +116,35 @@ const Contact = () => {
       <form onSubmit={formHandler} ref={form}>
         <div className="form__name-inputs">
           <div class="input__group names">
-            <input type="text" name="first__name" required/>
+            <input type="text" name="first__name" required />
             <label>First Name</label>
           </div>
           <div class="input__group names">
-            <input type="text" name="second__name" required/>
+            <input type="text" name="second__name" required />
             <label>Second Name</label>
-            
           </div>
-          
         </div>
-        <div class="input__group">
-          <input type="text" name="email" required/>
+        <div class={`input__group ${emailState.isValid === false ? 'invalid' : ''}`}>
+          <input
+            value={emailState.value}
+            onChange={emailChangeHandler}
+            onBlur={validateEmailHandler}
+            type="text"
+            name="email"
+            required
+          />
           <label>Email</label>
         </div>
         <div class="input__group">
-          <textarea id="message" rows="8" name="message" required/>
+          <textarea id="message" rows="8" name="message" required />
           <label>Message</label>
         </div>
-        <button type="submit" class={`animated__button ${buttonClicked ? 'button__clicked' : ''}`}>{buttonClicked ? `Message Sent!` : 'Submit'}
-       {buttonClicked ? <CheckIcon color="white" class="check__icon"/> : ''}
+        <button
+          type="submit"
+          class={`animated__button ${buttonClicked ? "button__clicked" : ""}`}
+        >
+          {buttonClicked ? `Message Sent!` : "Submit"}
+          {buttonClicked ? <CheckIcon color="white" class="check__icon" /> : ""}
         </button>
       </form>
     </div>

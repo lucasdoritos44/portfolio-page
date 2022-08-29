@@ -91,6 +91,10 @@ textarea:valid + label
   transform: translate(-5px, -2px);
 }
 
+.invalid input{
+  border-color: red;
+}
+
 @keyframes openFromBottomLeft{
   0%{
     height:100%;

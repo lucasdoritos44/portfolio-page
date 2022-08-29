@@ -59,7 +59,12 @@ const Contact = () => {
         leftArrow="Projects"
         rightArrow="Skills"
       />
-    
+     <div class="introduction">
+              <div class="introduction__position">
+                <h2>About me</h2>
+                <h3>My name is Łukasz, I’m 25 years old. I'm self-taught junior web developer. I live in Lomza, Poland. I finished an IT class in high school, but back in those days I wasn't thinking of becoming a programmer...</h3> <h4>I felt bored in my previous job, so I started coding in 2020. I was experimenting with many programming languages trying to find what suits me and finally chose the front-end ones. For me, coding is about learning new things and overcoming everyday challenges, which gives me great satisfaction. I try to combine my other passions with programming, so most of my projects are based on themes related to my interests. </h4>
+              </div>
+            </div>
     </div>
   );
 };

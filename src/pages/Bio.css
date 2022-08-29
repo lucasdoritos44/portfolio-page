@@ -26,15 +26,61 @@
     z-index:20;
   }
   
-  .contact__form-h2{
-    font-size:44px;
-    color: var(--third);
+
+  .introduction{
     position: absolute;
-    top:12%;
-    left:15%;
+    top:20%;
+    left:10%;
+    max-width:40%;
+    max-height:60%;
+    overflow: hidden;
+  }
+
+  .introduction__position{
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .introduction__position h2{
+    font-size:1.7em;
+    margin-bottom: 2rem;
+    color:var(--third)
   }
   
+  .introduction__position h3{
+    font-size:1.4em;
+    width:100%;
+    color: var(--second);
+    animation: fadeFromLeft 0.7s ease-out both 1s;
+    padding:1rem;
+    border-top: 1px solid var(--second);
+    border-right: 1px solid var(--second);
+  }
 
+  .introduction__position h4{
+    margin-top:5rem;
+    font-size:1.2em;
+    width:100%;
+    color: var(--forth);
+    animation: fadeFromRight 0.7s ease-out both 1s;
+    padding:1rem;
+    border-left: 1px solid var(--forth);
+    border-bottom: 1px solid var(--forth);
+  }
+
+  .introduction__position h3::before{
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    width:2px;
+    height:100%;
+    background-color: var(--second);
+    animation: strechToCenter 2.5s ease-in both;
+  }
   
   
   @keyframes openFromBottomLeft{
@@ -51,4 +97,45 @@
         width:0%;
       }
     }
+
+    @keyframes fadeFromLeft{
+      0%{
+        transform: translateX(-100%);
+      }
+      100%{
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeFromRight{
+      0%{
+        transform: translateX(100%);
+      }
+      100%{
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes strechToCenter{
+      0%{
+        opacity:0;
+        transform: scaleY(0);
+      }
+      15%{
+        height:100%;
+        opacity:1;
+        transform: scaleY(100%);
+      }
+      85%{
+        height:100%;
+        opacity:1;
+        transform: scaleY(100%);
+      }
+      100%{
+        height:0;
+        opacity:0;
+        transform: scaleY(0);
+      }
+    }
+  
   

@@ -61,7 +61,27 @@
     width: 100%;
   }
 
+  .left__arrow{
+    position: absolute;
+    left:5%;
+    top:10%;
+    transform: translate(-50%,-50%);
+    color:white;
+    z-index:100;
+    transform: scale(1.5);
+    animation: arrowLeftAnimation 2s ease-out both infinite;
+  }
 
+  .right__arrow{
+    position: absolute;
+    right:5%;
+    top:10%;
+    transform: translate(-50%,-50%);
+    color:white;
+    z-index:100;
+    transform: scale(1.5);
+    animation: arrowRightAnimation 2s ease-out both infinite;
+  }
   
   @keyframes openFromBottomLeft{
       0%{
@@ -75,6 +95,42 @@
       100%{
         height: 0%;
         width:0%;
+      }
+    }
+
+    @keyframes arrowRightAnimation{
+      0%,100%{
+        opacity:0;
+      }
+      25%{
+        opacity:0;
+        transform: scale(1.5);
+      }
+      50%{
+        opacity:1;
+        transform: scale(2);
+      }
+      75%{
+        opacity:0;
+        transform:  scale(1.5);
+      }
+    }
+  
+    @keyframes arrowLeftAnimation{
+      0%,100%{
+        opacity:0;
+      }
+      25%{
+        opacity:0;
+        transform: scale(1.5);
+      }
+      50%{
+        opacity:1;
+        transform:  scale(2);
+      }
+      75%{
+        opacity:0;
+        transform:  scale(1.5);
       }
     }
   
