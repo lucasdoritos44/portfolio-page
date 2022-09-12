@@ -1,6 +1,6 @@
 import React, { useState} from "react";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./MainPage.css";
 
 import FbLogo from "../assets/facebook.ico";
@@ -69,12 +69,18 @@ const MainPage = () => {
               rightArrow="Skills"/>
               <div class="second__phase-link-bar2">
                 <div className="second__phase-link-bar_contact2">
-                  <h2>Contact me</h2>
+                  <Link to="../contact"><h2>Contact me</h2></Link>
                 </div>
                 <div className="second__phase-link-bar_icons">
-                  <img src={FbLogo} alt="fb-logo" class="icon" />
+                <a href='https://www.facebook.com/profile.php?id=100014593084077' target="_blank" rel="norefferer">
+                 <img src={FbLogo} alt="fb-logo" class="icon"/>
+                 </a>
+                  <a href="https://github.com/lucasdoritos44" target="_blank" rel="norefferer">
                   <img src={GithubLogo} alt="github-logo" class="icon" />
+                  </a>
+                  <a href="https://www.linkedin.com/in/%C5%82ukasz-jesionowski-56ba2324b/" target="_blank" rel="norefferer"> 
                   <img src={LinkedinLogo} alt="linkedin-logo" class="icon" />
+                  </a>
                   <img src={TwitterLogo} alt="twitter-logo" class="icon" />
                 </div>
               </div>

@@ -32,7 +32,7 @@ const Project = ({
           onClick={() => setShowDescription(true)}
           className="project__desc-click"
         >
-          {link ? 'Click to see description' : 'TBC'}
+          {link ? 'Click to see description' : 'Coming soon'}
         </p>
       )}
       {showDescription && (

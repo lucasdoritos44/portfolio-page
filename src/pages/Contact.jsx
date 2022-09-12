@@ -1,53 +1,88 @@
-import React, { useState, useRef, useReducer } from "react";
+import React, { useState, useRef, useEffect, useReducer} from "react";
 import MenuBar from "../components/MenuBar";
 import ArrowsNavigation from "../components/ArrowsNavigation";
 import emailjs from "@emailjs/browser";
 import CheckIcon from "@mui/icons-material/Check";
+import { useNavigate } from "react-router-dom";
 
 import "./Contact.css";
 
-import { useNavigate } from "react-router-dom";
-
 import LoadingCounter from "../components/LoadingCounter";
 
-const emailReducer = (state, action) => {
-  if (action.type === "USER_INPUT") {
-    return { value: action.val, isValid: /\S+@\S+\.\S+/.test(state.value) };
-  }
-  if (action.type === "INPUT_BLUR") {
-    return { value: state.value, isValid: /\S+@\S+\.\S+/.test(state.value)  };
-  }
-  return { value: "", isValid: false };
-};
 
 const Contact = () => {
   const [keyAnimation, setKeyAnimation] = useState("");
-  const [buttonClicked, setButtonClicked] = useState(false);
-  const [formIsValid, setFormIsValid] = useState(false);
+  const [buttonClicked, setButtonClicked] = useState(false)
+  const [buttonClickMessage, setButtonClickMessage] = useState('')
 
-  const [emailState, dispatchEmail] = useReducer(emailReducer, {
-    value: "",
-    isValid: null,
-  });
+  const [enteredName, setEnteredName] = useState('');
+  const [nameIsValid, setNameIsValid] = useState();
+  const [enteredLastName, setEnteredLastName] = useState('')
+  const [lastNameIsValid, setLastNameIsValid] = useState()
+  const [enteredEmail, setEnteredEmail] = useState('')
+  const [enteredEmailIsValid, setEnteredEmailIsValid] = useState()
+  const [enteredMessage, setEnteredMessage] = useState('')
+  const [enteredMessageIsValid, setEnteredMessageIsValid] = useState()
 
 
+  const [formIsValid, setFormIsValid] = useState(false)
+
+  let regex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
+
+  
+  let navigate = useNavigate();
+
+  useEffect(() => {
+    const identifier = setTimeout(() => {
+      setFormIsValid(enteredName.trim().length > 1 && enteredLastName.trim().length > 1 && regex.test(enteredEmail) && enteredMessage.length > 1)
+    }, 500)
+
+    return () => {
+      clearTimeout(identifier)
+    }
+  })
+
+
+
+  const nameChangeHandler = (event) => {
+    setEnteredName(event.target.value);
+  };
+
+  const validateNameHandler = () => {
+    setNameIsValid(enteredName.trim().length > 1);
+  };
+
+  const lastNameChangeHandler = (event) => {
+    setEnteredLastName(event.target.value)
+  }
+
+  const validateLastNameHandler = () => {
+    setLastNameIsValid(enteredLastName.trim().length > 1)
+  }
 
   const emailChangeHandler = (event) => {
-    dispatchEmail({ type: "USER_INPUT", val: event.target.value });
-  };
+    setEnteredEmail(event.target.value)
+
+    console.log(enteredEmail)
+  }
+
 
   const validateEmailHandler = () => {
-    dispatchEmail({ type: "INPUT_BLUR" });
-  };
+    setEnteredEmailIsValid(regex.test(enteredEmail))
+  }
 
-  let navigate = useNavigate();
+  const messageChangeHandler = (event) => {
+    setEnteredMessage(event.target.value)
+  }
+
+  const validateMessageHandler = () => {
+    setEnteredMessageIsValid(enteredMessage.length > 1)
+  }
+
   const form = useRef();
-
   document.onkeydown = checkKey;
-
   function checkKey(e) {
     e = e || window.event;
-
     if (e.keyCode == "38") {
       setKeyAnimation("up");
       setTimeout(() => {
@@ -73,7 +108,6 @@ const Contact = () => {
 
   const formHandler = (e) => {
     e.preventDefault();
-
     setButtonClicked(true);
 
     emailjs
@@ -86,16 +120,22 @@ const Contact = () => {
       .then(
         (result) => {
           console.log(result.text);
-          console.log("message sent");
+          setButtonClickMessage("Message Sent!")
         },
         (error) => {
-          console.log(error.text);
+          setButtonClickMessage("Something went wrong :(")
         }
       );
+
+    setEnteredName('')
+    setEnteredLastName('')
+    setEnteredEmail('')
+    setEnteredMessage('')
 
     console.log("formSubmitted");
   };
 
+  
   return (
     <div class="contact__wrapper">
       <div class="cover__animation" />
@@ -112,39 +152,63 @@ const Contact = () => {
         leftArrow="Projects"
         rightArrow="Skills"
       />
+      {}
       <h2 class="contact__form-h2">Get in touch</h2>
       <form onSubmit={formHandler} ref={form}>
-        <div className="form__name-inputs">
-          <div class="input__group names">
-            <input type="text" name="first__name" required />
+        <div className='form__name-inputs'>
+          <div class={`input__group names ${nameIsValid === false ? 'invalid' : ''}`} >
+            <input
+              type="text"
+              name="first__name" 
+              required
+              onChange={nameChangeHandler}
+              onBlur={validateNameHandler}
+              value={enteredName}
+            />
             <label>First Name</label>
           </div>
-          <div class="input__group names">
-            <input type="text" name="second__name" required />
-            <label>Second Name</label>
+          <div class={`input__group names ${lastNameIsValid === false ? 'invalid' : ''}`}>
+            <input 
+            type="text" 
+            name="second__name"
+            value={enteredLastName}
+            onChange={lastNameChangeHandler}
+            onBlur={validateLastNameHandler}
+             required />
+            <label>Last Name</label>
           </div>
         </div>
-        <div class={`input__group ${emailState.isValid === false ? 'invalid' : ''}`}>
+        <div
+          class={`input__group ${enteredEmailIsValid === false ? 'invalid' : ''}`}
+        >
           <input
-            value={emailState.value}
-            onChange={emailChangeHandler}
-            onBlur={validateEmailHandler}
             type="text"
             name="email"
+            value={enteredEmail}
+            onChange={emailChangeHandler}
+            onBlur={validateEmailHandler}
             required
           />
           <label>Email</label>
         </div>
-        <div class="input__group">
-          <textarea id="message" rows="8" name="message" required />
+        <div class='input__group'>
+          <textarea 
+          className={enteredMessageIsValid === false ? 'invalid__message' : ''}
+          id="message" 
+          onChange={messageChangeHandler}
+          onBlur={validateMessageHandler}
+          value={enteredMessage}
+          rows="8" 
+          name="message"
+           required />
           <label>Message</label>
         </div>
         <button
           type="submit"
           class={`animated__button ${buttonClicked ? "button__clicked" : ""}`}
+          disabled={!formIsValid}
         >
-          {buttonClicked ? `Message Sent!` : "Submit"}
-          {buttonClicked ? <CheckIcon color="white" class="check__icon" /> : ""}
+          {buttonClicked ? buttonClickMessage : "Submit"}
         </button>
       </form>
     </div>

@@ -17,7 +17,7 @@ import LoadingCounter from "../components/LoadingCounter";
 import { projects } from "../data/ProjectsData";
 import Project from "../components/Project";
 
-const Contact = () => {
+const Projects = () => {
   const [keyAnimation, setKeyAnimation] = useState("");
 
   let navigate = useNavigate();
@@ -117,4 +117,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Projects;

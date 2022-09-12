@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 import LoadingCounter from "../components/LoadingCounter";
 
-const Contact = () => {
+const Bio = () => {
   const [keyAnimation, setKeyAnimation] = useState("");
 
 
@@ -62,11 +62,11 @@ const Contact = () => {
      <div class="introduction">
               <div class="introduction__position">
                 <h2>About me</h2>
-                <h3>My name is Łukasz, I’m 25 years old. I'm self-taught junior web developer. I live in Lomza, Poland. I finished an IT class in high school, but back in those days I wasn't thinking of becoming a programmer...</h3> <h4>I felt bored in my previous job, so I started coding in 2020. I was experimenting with many programming languages trying to find what suits me and finally chose the front-end ones. For me, coding is about learning new things and overcoming everyday challenges, which gives me great satisfaction. I try to combine my other passions with programming, so most of my projects are based on themes related to my interests. </h4>
+                <h3>My name is Łukasz and I'm 25 years old. I'm a self-taught junior web developer who currently lives in Łomża, Poland. I graduated IT High School but back then I didn't think of becoming a programmer...</h3> <h4>My previous jobs developed my time management, problem-solving and communication skills, but since they were not related to my interests, I decided to start coding in 2020. I was experimenting with many programming languages trying to find what suits me and finally chose the front-end ones. For me, coding is about learning new things and overcoming everyday challenges, which gives me great satisfaction. I try to combine my other passions with programming, so most of my projects are based on themes related to my interests. </h4>
               </div>
             </div>
     </div>
   );
 };
 
-export default Contact;
+export default Bio;

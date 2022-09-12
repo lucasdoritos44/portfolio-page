@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import MenuBar from "../components/MenuBar";
 import ArrowsNavigation from "../components/ArrowsNavigation";
+import DependenciesBlock from "../components/DependenciesBlock";
 
 import "./Skills.css";
 
@@ -8,12 +9,46 @@ import { useNavigate } from "react-router-dom";
 
 import LoadingCounter from "../components/LoadingCounter";
 
-const Contact = () => {
+import HtmlLogo from "../assets/html-logo.svg";
+import CssLogo from "../assets/css-logo.svg";
+import JsLogo from "../assets/js-logo.svg";
+import ReactLogo from "../assets/react-logo.svg";
+import MaterialuiLogo from "../assets/materialui-logo.svg";
+import NextJSLogo from '../assets/nextjs-logo.svg'
+
+const Skills = () => {
   const [keyAnimation, setKeyAnimation] = useState("");
 
+  const skills = [
+    { name: "HTML 5", img: HtmlLogo },
+    {
+      name: "CSS 3",
+      img: CssLogo,
+
+    },
+    {
+      name: "Javascript",
+      img: JsLogo,
+
+    },
+    {
+      name: "React",
+      img: ReactLogo,
+
+    },
+    {
+      name: "Material UI",
+      img: MaterialuiLogo,
+
+    },
+    {
+      name:"Next JS",
+      img: NextJSLogo,
+      av: true
+    }
+  ];
 
   let navigate = useNavigate();
-
 
   document.onkeydown = checkKey;
 
@@ -59,9 +94,16 @@ const Contact = () => {
         leftArrow="Projects"
         rightArrow="Contact"
       />
-    
+      <div class="skills__wrapper">
+        <h2>What I use</h2>
+        <div class="skills">
+          {skills.map((skill) => (
+            <DependenciesBlock title={skill.name} img={skill.img} notAvailable={skill.av}/>
+          ))} 
+        </div>
+      </div>
     </div>
   );
 };
 
-export default Contact;
+export default Skills;

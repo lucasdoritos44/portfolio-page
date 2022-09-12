@@ -8,7 +8,7 @@ export const projects = [
        link__github: 'https://github.com/lucasdoritos44/dailyCrypto',
         name: 'Daily Crypto',
         description: 'Daily Crypto is a website where you can find important information about Bitcoin, Ethereum and other cryptocurrencies, such as price charts, price history or useful links to dive deep into blockchain technology. Daily Crypto also brings you daily news about blockchain. In addition to cryptocurrencies, you can find here the top 100 exchanges where you can buy and hold your cryptocurrencies.',
-        dependencies: 'HTML, CSS, Javascript, React, React-Router, React-chartjs, Axios, CoinGecko API, Material-UI', 
+        dependencies: 'HTML, CSS, Javascript, React, React-chartjs, Axios, CoinGecko API, Material-UI', 
         video: DailyCryptoVideo   
     },
     {
@@ -16,7 +16,7 @@ export const projects = [
        link__github: 'https://github.com/lucasdoritos44/get-shredded',
         name: 'Get Shredded',
         description: 'Get Shredded is a fully responsive website where you can find over 1000 exercises with gifs, description and youtube videos to help keeping your body in shape. You can also find there a body calculator that calculate your body fat and number of calories to grow or lose weight. ',
-        dependencies: 'HTML, CSS, Javascript, React, React-Router, Axios, Rapid API, Material-UI', 
+        dependencies: 'HTML, CSS, Javascript, React, Axios, Rapid API, Material-UI', 
         video: GetShreddedVideo 
     },
     {

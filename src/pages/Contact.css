@@ -95,6 +95,10 @@ textarea:valid + label
   border-color: red;
 }
 
+.invalid__message{
+  border-color:red
+}
+
 @keyframes openFromBottomLeft{
   0%{
     height:100%;
@@ -130,6 +134,11 @@ box-shadow: 12px 14px 45px 0px rgba(49, 3, 55, 0.7);
   color:var(--second);
 box-shadow: none;
 transform: translate(5px, 5px);
+}
+
+.animated__button:disabled{
+
+transform: translate(0px, 0px);
 }
 
 .button__clicked{

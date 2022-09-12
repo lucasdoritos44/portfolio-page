@@ -1,0 +1,29 @@
+.dependency__wrapper{
+    width:200px;
+    height:300px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem;
+    background: rgba( 69, 6, 70, 0.55 );
+    box-shadow: 0 8px 32px 0 rgba(36, 3, 33, 0.37);
+    backdrop-filter: blur( 7px );
+    -webkit-backdrop-filter: blur( 7px );
+    border-radius: 15px;
+}
+
+.notAv{
+    background: rgba( 0, 0, 0, 0.6 );
+}
+
+.dependency__wrapper img{
+    width:100px;
+    height:auto;
+}
+
+.dependency__wrapper h3{
+    font-size:24px;
+    color:var(--forth)
+}
+

@@ -14,7 +14,7 @@ const ArrowsNavigation = ({keyAnimation, upArrow, downArrow, leftArrow, rightArr
     <div class="second__phase">
       <div class="second__phase-rect">
         <div class="second__phase-rect_p">
-          <p>Select an arrow to go to:</p>
+          <p>Press an arrow to go to:</p>
         </div>
         <div className="arrows">
           <p class="arrow__up-p">{upArrow}</p>
