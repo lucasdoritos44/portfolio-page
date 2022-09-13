@@ -16,7 +16,7 @@ const LoadingCounter = ({start = 0, end = 100, timer = 50, side}) => {
             setCounter(result);
             ref.current = result;
         }
-        setTimeout(updateCounter, 25)
+        setTimeout(updateCounter, 15)
     }
 
     useEffect(() => {
