@@ -7,7 +7,7 @@ const LoadingCounter = ({start = 0, end = 100, timer = 50, side}) => {
     
     const ref = useRef(start)
 
-    const accumulator = end / 200
+    const accumulator = end / 100
 
     const updateCounter = () => {
         if(ref.current < end){
@@ -16,7 +16,7 @@ const LoadingCounter = ({start = 0, end = 100, timer = 50, side}) => {
             setCounter(result);
             ref.current = result;
         }
-        setTimeout(updateCounter, 15)
+        setTimeout(updateCounter, 25)
     }
 
     useEffect(() => {
