@@ -1,6 +1,7 @@
 import DailyCryptoVideo from '../assets/dailyCryptovideo.mp4'
 import GetShreddedVideo from '../assets/getShreddedVideo.mp4'
 import SpaceXCloneVideo from '../assets/SpaceXCloneVideo.mp4'
+import BlackjackVideo from '../assets/blackjack.mp4'
 
 export const projects = [
     {
@@ -36,4 +37,11 @@ export const projects = [
         dependencies: 'HTML, CSS, Javascript', 
         video: SpaceXCloneVideo 
     },
+    {
+        link: 'https://blackjack-ld44.netlify.app/',
+        link__github: 'https://github.com/lucasdoritos44/Blackjack',
+        name: 'Blackjack Game',
+        description: 'Fully responsive Blackjack Game',
+        video: BlackjackVideo
+    }
 ]
