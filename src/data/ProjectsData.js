@@ -42,6 +42,7 @@ export const projects = [
         link__github: 'https://github.com/lucasdoritos44/Blackjack',
         name: 'Blackjack Game',
         description: 'Fully responsive Blackjack Game',
+        dependencies: 'HTML, CSS, Javascript', 
         video: BlackjackVideo
     }
 ]
