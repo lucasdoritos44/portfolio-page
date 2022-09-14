@@ -6,7 +6,7 @@ import "./MainPage.css";
 import FbLogo from "../assets/facebook.ico";
 import GithubLogo from "../assets/github.png";
 import LinkedinLogo from "../assets/linkedin.ico";
-import TwitterLogo from "../assets/twitter.ico";
+import telegramLogo from '../assets/telegram-logo.svg'
 
 
 import LoadingCounter from "../components/LoadingCounter";
@@ -81,7 +81,9 @@ const MainPage = () => {
                   <a href="https://www.linkedin.com/in/%C5%82ukasz-jesionowski-56ba2324b/" target="_blank" rel="norefferer"> 
                   <img src={LinkedinLogo} alt="linkedin-logo" class="icon" />
                   </a>
-                  <img src={TwitterLogo} alt="twitter-logo" class="icon" />
+                  <a href="https://t.me/lucasdoritos44" target="_blank" rel="norefferer"> 
+                  <img src={telegramLogo} alt="telegram-logo" class="icon" />
+                  </a>
                 </div>
               </div>
             </div>
