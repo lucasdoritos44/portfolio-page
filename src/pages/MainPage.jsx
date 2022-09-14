@@ -6,7 +6,7 @@ import "./MainPage.css";
 import FbLogo from "../assets/facebook.ico";
 import GithubLogo from "../assets/github.png";
 import LinkedinLogo from "../assets/linkedin.ico";
-import telegramLogo from '../assets/telegram-logo.svg'
+import telegramLogo from '../assets/telegram-logo.ico'
 
 
 import LoadingCounter from "../components/LoadingCounter";
