@@ -5,7 +5,7 @@ const DependenciesBlock = ({title, img, notAvailable}) => {
   return (
     <div className={`dependency__wrapper ${notAvailable ? 'notAv' : ''}`}>
       <img src={img} alt="dependency image"/>
-        <h3>{notAvailable ? `In Learning` : title}</h3>      
+        <h3>{notAvailable ? `Learning` : title}</h3>      
     </div>
   )
 }
