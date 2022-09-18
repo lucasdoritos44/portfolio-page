@@ -2,6 +2,7 @@ import DailyCryptoVideo from '../assets/dailyCryptovideo.mp4'
 import GetShreddedVideo from '../assets/getShreddedVideo.mp4'
 import SpaceXCloneVideo from '../assets/SpaceXCloneVideo.mp4'
 import BlackjackVideo from '../assets/blackjack.mp4'
+import FlavorosaVideo from '../assets/flavorosaVideo.mp4'
 
 export const projects = [
     {
@@ -44,5 +45,13 @@ export const projects = [
         description: 'Fully responsive Blackjack Game',
         dependencies: 'HTML, CSS, Javascript', 
         video: BlackjackVideo
+    },
+    {
+        link: 'https://flavorosa.netlify.app/',
+        link__github: 'https://github.com/lucasdoritos44/Flavorosa',
+        name: 'Flavorosa Restaurant',
+        description: 'Fully responsive fake restaurant website',
+        dependencies: 'HTML, CSS, Javascript, React', 
+        video: FlavorosaVideo
     }
 ]
