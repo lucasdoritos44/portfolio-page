@@ -15,6 +15,7 @@ import JsLogo from "../assets/js-logo.svg";
 import ReactLogo from "../assets/react-logo.svg";
 import MaterialuiLogo from "../assets/materialui-logo.svg";
 import NextJSLogo from '../assets/nextjs-logo.svg'
+import TypescriptLogo from '../assets/typescript-logo.svg'
 
 const Skills = () => {
   const [keyAnimation, setKeyAnimation] = useState("");
@@ -45,7 +46,12 @@ const Skills = () => {
       name:"Next JS",
       img: NextJSLogo,
       av: true
-    }
+    },
+    {
+      name:"Typescript",
+      img: TypescriptLogo,
+      av: true
+    },
   ];
 
   let navigate = useNavigate();
