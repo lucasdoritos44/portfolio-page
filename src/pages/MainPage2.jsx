@@ -100,7 +100,7 @@ const MainPage = () => {
             <div className="intro__third-line2">
               <div class="intro__third-line-position2">
                 <h3>
-                  Looking to land a first job <p class="eyesEmoji">👀</p>
+
                 </h3>
               </div>
             </div>

@@ -123,7 +123,7 @@ const MainPage = () => {
             <div className="intro__third-line">
               <div class="intro__third-line-position">
                 <h3>
-                  Looking to land a first job <p class="eyesEmoji">👀</p>
+                
                 </h3>
               </div>
             </div>
