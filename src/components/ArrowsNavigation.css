@@ -168,3 +168,48 @@
           height:40vh;
         }
       }
+
+@media screen and (max-width:1600px) {
+  .arrow__left, .arrow__right, .arrow__down, .arrow__up{
+    width:110px;
+    height:110px;
+}    
+.arrow__down-p, .arrow__left-p, .arrow__right-p{
+  position: absolute;
+  top:40%;
+  font-size:22px;
+}
+} 
+
+@media screen and (max-width: 1400px){
+  .arrow__right-p, .arrow__left-p, .arrow__down-p, .arrow__up-p{
+    font-size:20px;
+  }
+  .arrow__left, .arrow__right, .arrow__down, .arrow__up{
+    width:100px;
+    height:100px;
+}    
+.arrow__up{
+  top:25%;
+}
+.arrow__up-p{
+  top:20%;
+}
+.second__phase-rect_p{
+  font-size:18px;
+}
+}
+
+@media screen and (max-width:1250px){
+  .second__phase-rect{
+    position: absolute;
+    top:25%;
+    right:-5%;
+    transform: rotate(25deg);
+    width:50vw;
+    height:150vh;
+    background-color: var(--fifth);
+    animation: openSecondPhase 1.5s ease-out;
+    z-index:2;
+  }
+}

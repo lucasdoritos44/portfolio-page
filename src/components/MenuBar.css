@@ -171,3 +171,16 @@
       opacity:1;
     }
   }
+
+@media screen and (max-width:1400px){
+   .hamburger-menu{
+    top:55%;
+    left:65%;
+    transform: rotate(60deg);
+  }
+  .second__phase-menu{
+    position: absolute;
+    top:-25%;
+    right:-15%;
+  }
+}

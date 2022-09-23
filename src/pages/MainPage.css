@@ -90,7 +90,6 @@
     background-color: var(--sixth);
     animation: openSecondPhase-2 1.5s ease-in-out ;
     z-index:3;
-    
   }
 
   .second__phase-link-bar{
@@ -398,5 +397,5 @@
     }
   }
 
-  
+ 
 
