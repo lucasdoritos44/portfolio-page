@@ -397,5 +397,40 @@
     }
   }
 
- 
+ @media screen and (max-width:1300px){
+  .second__phase-link-bar{
+    padding:0 5rem 0 1rem;
+  }
+ }
 
+ @media screen and (max-width:1100px){
+  .second__phase-link-bar{
+    width:100vw;
+  }
+ }
+
+ @media screen and (max-width:800px){
+  .second__phase-link-bar{
+    padding:0rem 0rem 0rem 1rem;
+  }
+ }
+
+ @media screen and (max-width:560px){
+  .icon{
+    width:30px;
+    height:30px;
+    margin:0 0.5rem;
+    
+  }
+
+.second__phase-link-bar_icons{
+  width:100%;
+  display:flex;
+  justify-content: flex-end;
+  margin-right: 1rem;
+}
+  
+  .second__phase-link-bar_contact h2{
+   font-size:20px;
+  }
+ }

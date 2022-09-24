@@ -2,6 +2,7 @@ import "./MenuBar.css";
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const MenuBar = () => {
   const [showAnimatedMenu, setShowAnimatedMenu] = useState(false);

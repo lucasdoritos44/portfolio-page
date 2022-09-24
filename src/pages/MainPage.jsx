@@ -13,6 +13,8 @@ import LoadingCounter from "../components/LoadingCounter";
 import MenuBar from "../components/MenuBar";
 import ArrowsNavigation from "../components/ArrowsNavigation";
 
+import useMediaQuery from '@mui/material/useMediaQuery';
+
 const MainPage = () => {
   const [hideWelcome, setHideWelcome] = useState(false);
   const [showIntro, setShowIntro] = useState(false);
@@ -32,6 +34,8 @@ const MainPage = () => {
   }, [hideWelcome, showIntro, showSecondPhase]);
 
   let navigate = useNavigate();
+  const matches = useMediaQuery('(max-width:800px)');
+  console.log(matches)
 
   document.onkeydown = checkKey;
 

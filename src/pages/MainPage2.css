@@ -266,4 +266,36 @@
     }
   }
   
+  @media screen and (max-width:1300px){
+    .second__phase-link-bar2{
+      padding:0 5rem 0 1rem;
+    }
+  }
 
+  @media screen and (max-width:1100px){
+    .second__phase-link-bar2{
+      width:100vw;
+    }
+   }
+
+   @media screen and (max-width:560px){
+    .icon{
+      width:30px;
+      height:30px;
+      margin:0 0.5rem;
+    }
+  
+  .second__phase-link-bar_icons{
+    width:100%;
+  }
+    
+    .second__phase-link-bar_contact2 h2{
+     font-size:20px;
+    }
+   }
+
+   @media screen and (max-width:800px){
+    .second__phase-link-bar2{
+      padding:0rem 0rem 0rem 1rem;
+    }
+   }
