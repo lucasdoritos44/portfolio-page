@@ -177,6 +177,13 @@
     animation: fadeFromBottom 0.7s ease-out both 3.5s;
   }
 
+  .intro__third-line-position p {
+    font-size:55px;
+    background:  linear-gradient(90deg, rgba(254,133,242,1) 0%, rgba(255,141,110,1) 38%, rgba(238,233,146,1) 66%, rgba(162,161,230,1) 100%);
+    background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  }
 
   .intro__first-line-position::before{
     content:'';

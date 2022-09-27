@@ -100,7 +100,7 @@ const MainPage = () => {
             <div className="intro__third-line2">
               <div class="intro__third-line-position2">
                 <h3>
-
+                Let's build something &nbsp;<p>creative</p>&nbsp; together
                 </h3>
               </div>
             </div>
