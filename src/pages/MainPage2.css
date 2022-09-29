@@ -273,6 +273,29 @@
       width:100%;
     }
   }
+
+  @media screen and (max-width:1400px){
+    .intro__third-line-position2 h3, .intro__first-line-position2 h3, .intro__third-line-position2 p{
+      font-size:1.6em;
+    }
+    .intro__second-line-position2 h2{
+      font-size:2.2em
+    }
+
+    .second__phase-link-bar2{
+      width:100vw;
+    }
+    .intro__first-line2{
+      left:10%;
+    }
+    .intro__second-line2{
+      left:15%;
+    }
+    .intro__third-line2{
+      left:10%;
+    }
+
+  }
   
   @media screen and (max-width:1300px){
     .second__phase-link-bar2{
@@ -283,6 +306,36 @@
   @media screen and (max-width:1100px){
     .second__phase-link-bar2{
       width:100vw;
+    }
+    .second__phase-link-bar2{
+      width:100vw;
+    }
+    .intro__third-line-position2 h3, .intro__first-line-position2 h3, .intro__third-line-position2 p{
+      font-size:1.4em;
+    }
+    .intro__second-line-position2 h2{
+      font-size:2em
+    }
+    .intro__first-line2{
+      left:5%;
+      top:22%;
+    }
+    .intro__second-line2{
+      left:10%;
+      top:30%;
+    }
+    .intro__third-line2{
+      left:5%;
+    }
+  
+    .second__phase-link-bar2{
+      z-index:2;
+      justify-content: space-between;
+      height:10%
+    }
+  
+    .second__phase-link-bar_contact2{
+      margin-left:2rem;
     }
    }
 
@@ -300,10 +353,67 @@
     .second__phase-link-bar_contact2 h2{
      font-size:20px;
     }
-   }
-
-   @media screen and (max-width:800px){
-    .second__phase-link-bar2{
-      padding:0rem 0rem 0rem 1rem;
+  
+    .second__phase-link-bar_icons2{
+      width:100%;
+      display:flex;
+      justify-content: flex-end;
+      margin-right: 1rem;
     }
+    .intro__first-line-position2 h3{
+      font-size:1.4em;
+    }
+    .intro__second-line-position2 h2{
+      font-size:2em
+    }
+    .intro__third-line-position2 h3{
+      display:flex;
+      flex-direction: column;
+      font-size:1.6em;
+    }
+    
+    .intro__third-line-position2 p{
+      font-size:2.5em;
+      text-align: end;
+      width:80vw;
+    }
+      
+      .second__phase-link-bar_contact2 h2{
+       font-size:20px;
+      }
+      .intro__first-line2{
+        left:5%;
+      }
+      .intro__second-line2{
+        left:25%;
+      }
+      .intro__third-line2{
+        left:5%;
+     }
+ }
+
+    @media screen and (max-width:800px){
+      .second__phase-link-bar2{
+        padding:0rem 0rem 0rem 1rem;
+        justify-content: space-around;
+      }
+
+      .second__phase-link-bar2{
+        padding:0rem 0rem 0rem 1rem;
+        justify-content: space-around;
+      }
+    
+      .second__phase-link-bar2{
+        width:100vw;
+      }
+    
+      .intro__first-line2{
+        left:10%;
+      }
+      .intro__second-line2{
+        left:15%;
+      }
+      .intro__third-line2{
+        left:10%;
+      }
    }

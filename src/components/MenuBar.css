@@ -19,6 +19,7 @@
     font-size:20px;
     color: var(--forth);
     transition: 0.5s;
+  text-align: center;
   }
   
   .animated-menu-active ul li:hover{
@@ -128,6 +129,33 @@
     margin-left:10px;
   }
 
+
+
+  @keyframes coverUpMenu{
+    0%{
+      height:0%;
+      width:0%;
+    }
+    100%{
+      top:100%;
+      right:-90%;
+      height: 250%;
+      width:250%;
+    }
+  }
+
+  @keyframes coverBackMenu{
+    0%{
+      top:100%;
+      right:-90%;
+      height: 250%;
+      width:250%;
+    }
+    100%{
+      height:0%;
+      width:0%;
+    }
+  }
   
   @keyframes hamburger2AnimationOpen{
     0%{
@@ -152,12 +180,12 @@
 
   @keyframes disactiveMenu{
     0%{
-      transform: translateY(0);
       opacity:1;
+      transform: translate(0%,0%)
     }
     100%{
-      transform: translateY(50px);
       opacity:0;
+      transform: translate(0%,0%)
     }
   }
 
@@ -197,6 +225,10 @@
     width:80vw;
     padding:0rem;
   }
+  .animated-menu-active ul li{
+    width:100%;
+    font-size: 18px;
+  }
 }
 
 @media screen and (max-width:800px){
@@ -214,5 +246,40 @@
     animation:none;
   }
 
+  .animated-menu-disactive ul{
+    display:none;
+  }
+
+  .hamburger-menu{
+    top:75%;
+    left:60%;
+    transform: rotate(60deg);
+  }
+  .second__phase-menu{
+    position: absolute;
+    top:-30%;
+    right:-35%;
+    width:100vw;
+  }
+
+  .show__animated_menu{ 
+    background-color: var(--sixth);
+    top:0%;
+    right:0%;
+    transform: rotate(60deg);
+    position: absolute;
+    animation:coverUpMenu 0.8s ease-out both;
+    z-index: 0;
+  }
+
+  .hide__animated_menu{
+    background-color: var(--sixth);
+    top:0%;
+    right:0%;
+    transform: rotate(60deg);
+    position: absolute;
+    animation:coverBackMenu 0.8s ease-out both;
+    z-index: 0;
+  }
 
 }

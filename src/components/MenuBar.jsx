@@ -13,6 +13,7 @@ const MenuBar = () => {
     setShowAnimatedMenuContent(true);
   };
 
+
   return (
     <div class="menu__bar-wrapper">
       <div
@@ -27,7 +28,8 @@ const MenuBar = () => {
           </ul>
         )}
       </div>
-      <div class="second__phase-menu">
+      <div class='second__phase-menu'>
+        <div className={`${showAnimatedMenu ? 'show__animated_menu' : 'hide__animated_menu'} `}></div>
         <div
           onClick={toggleNavMenu}
           class={`hamburger-menu ${showAnimatedMenu ? "open" : "close"}`}

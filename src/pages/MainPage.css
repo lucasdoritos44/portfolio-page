@@ -74,12 +74,6 @@
     opacity: 0;
   }
 
-  intro__wrapper{
-    width:100vw;
-    height:100vh;
-  }
-
-
   .second__phase-menu{
     position: absolute;
     top:-15%;
@@ -404,6 +398,29 @@
     }
   }
 
+  @media screen and (max-width:1400px){
+    .intro__third-line-position h3, .intro__first-line-position h3, .intro__third-line-position p{
+      font-size:1.6em;
+    }
+    .intro__second-line-position h2{
+      font-size:2.2em
+    }
+
+    .second__phase-link-bar{
+      width:100vw;
+    }
+    .intro__first-line{
+      left:10%;
+    }
+    .intro__second-line{
+      left:15%;
+    }
+    .intro__third-line{
+      left:10%;
+    }
+
+  }
+
  @media screen and (max-width:1300px){
   .second__phase-link-bar{
     padding:0 5rem 0 1rem;
@@ -414,11 +431,53 @@
   .second__phase-link-bar{
     width:100vw;
   }
+  .intro__third-line-position h3, .intro__first-line-position h3, .intro__third-line-position p{
+    font-size:1.4em;
+  }
+  .intro__second-line-position h2{
+    font-size:2em
+  }
+  .intro__first-line{
+    left:5%;
+    top:22%;
+  }
+  .intro__second-line{
+    left:10%;
+    top:30%;
+  }
+  .intro__third-line{
+    left:5%;
+  }
+
+  .second__phase-link-bar{
+    z-index:2;
+    justify-content: space-between;
+    height:10%
+  }
+
+  .second__phase-link-bar_contact{
+    margin-left:2rem;
+  }
  }
 
  @media screen and (max-width:800px){
   .second__phase-link-bar{
     padding:0rem 0rem 0rem 1rem;
+    justify-content: space-around;
+  }
+
+  .second__phase-link-bar{
+    width:100vw;
+  }
+
+  .intro__first-line{
+    left:10%;
+  }
+  .intro__second-line{
+    left:15%;
+  }
+  .intro__third-line{
+    left:10%;
   }
  }
 
@@ -436,8 +495,34 @@
   justify-content: flex-end;
   margin-right: 1rem;
 }
+.intro__first-line-position h3{
+  font-size:1.4em;
+}
+.intro__second-line-position h2{
+  font-size:2em
+}
+.intro__third-line-position h3{
+  display:flex;
+  flex-direction: column;
+  font-size:1.6em;
+}
+
+.intro__third-line-position p{
+  font-size:2.5em;
+  text-align: end;
+  width:80vw;
+}
   
   .second__phase-link-bar_contact h2{
    font-size:20px;
+  }
+  .intro__first-line{
+    left:5%;
+  }
+  .intro__second-line{
+    left:25%;
+  }
+  .intro__third-line{
+    left:5%;
   }
  }
