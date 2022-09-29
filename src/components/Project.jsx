@@ -71,7 +71,6 @@ const Project = ({
         muted
         className="project__video"
       /> : <img src={img} />}
-      
     </div>
   );
 };
