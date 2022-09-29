@@ -23,6 +23,7 @@ const Project = ({
 
   return (
     <div className="project__wrapper">
+      <div className="lower__overflay"></div>
       {modalShown && <div className="project__wrapper-modal"></div>}
       <h3>{name}</h3>
       {!showDescription && (
@@ -39,7 +40,7 @@ const Project = ({
         <div className="project__desc-dep">
           <CloseIcon className="close__icon" onClick={closeButtonHandler} />
           <p className="project__desc">{description}</p>
-          <p style={{ marginTop: "3rem" }}>{name} is made with:</p>
+          <p style={{ marginTop: "3rem", fontSize: '14px', padding:'0 1rem' }}>{name} is made with:</p>
           <p className="project__dep">{dependencies}</p>
           <div className="project__links">
             <a
@@ -70,6 +71,7 @@ const Project = ({
         muted
         className="project__video"
       /> : <img src={img} />}
+      
     </div>
   );
 };

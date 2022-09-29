@@ -9,7 +9,6 @@ a{
     position: absolute;
     top:5%;
     left:-15%;
-    
   }
 
   .project__wrapper{
@@ -17,9 +16,6 @@ a{
     height: 100%;
     width:100%;
   }
-
-
-
 
   .close__icon{
     width:30px;
@@ -53,8 +49,6 @@ a{
   .project__dep{
     margin-bottom:4rem;
   }
-
-
 
   .project__links{
     display:flex;
@@ -122,8 +116,16 @@ z-index:100;
     backdrop-filter: blur(4.9px);
     -webkit-backdrop-filter: blur(4.9px);
     animation: hoverModal 0.6s;
-    
    }
+
+   .lower__overflay{
+    position: absolute;
+    bottom: 0%;
+    left:0%;
+    width:110vw;
+    height:10vh;
+    background-color: rgba(0,0,0,0.6);
+  }
 
 @keyframes hoverModal {
   0%{
@@ -134,3 +136,126 @@ z-index:100;
   }
 }
 
+@media screen and (max-width:1600px){
+.mySwiper{
+    width:1300px;
+    height:731px;
+    position: absolute;
+    top:5%;
+    left:-15%;
+  }
+}
+@media screen and (max-width:1400px){
+.mySwiper{
+    width:1100px;
+    height:620px;
+    position: absolute;
+    top:5%;
+    left:-15%;
+  }
+
+  .project__desc{
+    margin-top:0;
+    padding-top:15rem;
+    font-size:16px;
+  }
+
+  .close__icon{
+    top:27%;
+    right:-10%;  
+  }
+}
+@media screen and (max-width:1100px){
+.mySwiper{
+    width:1200px;
+    height:675px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top:50%;
+    left:50%;
+  }
+
+  .lower__overflay{
+    position: absolute;
+    bottom: 0%;
+    left:50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%,0%);
+    width:100vw;
+    height:10vh;
+    background-color: rgba(0,0,0,0.6);
+  }
+
+  .close__icon{
+    top:25%;
+    right:15%;  
+  }
+}
+
+@media screen and (max-width:1000px){
+  .mySwiper{
+      width:1000px;
+      height:565px;
+      position: absolute;
+      transform: translate(-50%,-50%);
+      top:50%;
+      left:50%;
+    }
+
+    .project__desc{
+      margin-top:0;
+      padding-top:17rem;
+      font-size:14px;
+    }
+
+    .project__desc p{
+      font-size:14px
+    }
+  
+    .close__icon{
+      top:31%;
+      right:-5%;  
+    }
+  }
+
+@media screen and (max-width:600px){
+  .mySwiper{
+      width:800px;
+      height:450px;
+      position: absolute;
+      transform: translate(-50%,-50%);
+      top:50%;
+      left:50%;
+    }
+
+    .project__desc-click{
+      bottom:-35%;
+    }
+
+    .project__desc{
+      padding-top:16rem;
+      padding-left:1rem;
+      padding-right:1rem;
+      font-size:14px;
+    }
+
+    .project__dep{
+      padding:0 1rem;
+    }
+
+    .project__links{
+      font-size:14px;
+      padding:0 1rem;
+    }
+
+    .project__dep{
+      margin-bottom:2rem;
+    }
+
+    .close__icon{
+      top:35%;
+      right:5%;  
+    }
+  }

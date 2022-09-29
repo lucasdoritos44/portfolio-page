@@ -34,20 +34,6 @@
     z-index:20;
   }
 
-  .mySwiper{
-    width:1400px;
-    height:850px;
-    position: absolute;
-    top:5%;
-    left:-15%;
-    
-  }
-  
-  .swiper {
-    width: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
   
   .swiper-slide {
     background-position: center;
@@ -63,24 +49,62 @@
 
   .left__arrow{
     position: absolute;
-    left:5%;
-    top:10%;
+    left:30%;
+    top:93%;
     transform: translate(-50%,-50%);
-    color:white;
+    color: var(--second);
     z-index:100;
-    transform: scale(1.5);
-    animation: arrowLeftAnimation 2s ease-out both infinite;
+    animation: arrowAnimation 2s ease-out both infinite;
+  }
+
+  .left__arrow-p{
+    position: absolute;
+    left:35%;
+    top: 93%;
+    z-index:100;
+    color: var(--second);
+    font-weight: 700;
+    font-size:14px;
+    animation: arrowPAnimation 2s ease-out both infinite;
   }
 
   .right__arrow{
     position: absolute;
-    right:5%;
-    top:10%;
+    right:30%;
+    top: 93%;
     transform: translate(-50%,-50%);
-    color:white;
+    color: var(--second);
     z-index:100;
-    transform: scale(1.5);
-    animation: arrowRightAnimation 2s ease-out both infinite;
+    animation: arrowAnimation 2s ease-out both infinite;
+  }
+
+  .right__arrow-p{
+    position: absolute;
+    right:35%;
+    top: 93%;
+    z-index:100;
+    color: var(--second);
+    font-weight: 700;
+    font-size:14px;
+    animation: arrowPAnimation 2s ease-out both infinite;
+  }
+
+  @keyframes arrowPAnimation{
+    0%,100%{
+      opacity:0;
+    }
+    25%{
+      opacity:0;
+      transform: scale(1.1);
+    }
+    50%{
+      opacity:1;
+      transform: scale(1.3);
+    }
+    75%{
+      opacity:0;
+      transform:  scale(1.1);
+    }
   }
   
   @keyframes openFromBottomLeft{
@@ -98,7 +122,7 @@
       }
     }
 
-    @keyframes arrowRightAnimation{
+    @keyframes arrowAnimation{
       0%,100%{
         opacity:0;
       }
@@ -115,22 +139,51 @@
         transform:  scale(1.5);
       }
     }
-  
-    @keyframes arrowLeftAnimation{
-      0%,100%{
-        opacity:0;
-      }
-      25%{
-        opacity:0;
-        transform: scale(1.5);
-      }
-      50%{
-        opacity:1;
-        transform:  scale(2);
-      }
-      75%{
-        opacity:0;
-        transform:  scale(1.5);
-      }
-    }
+@media screen and (max-width:1000px){
+  .left__arrow{
+    left:25%;
+    top:93%;
+  }
+
+  .left__arrow-p{
+    left:30%;
+    top: 93%;
+  }
+
+  .right__arrow{
+    right:25%;
+    top: 93%;
+  }
+
+  .right__arrow-p{
+    right:30%;
+    top: 93%;
+  }
+}
+
+@media screen and (max-width:600px){
+  .left__arrow{
+    left:27%;
+    top:93%;
+  }
+
+  .left__arrow-p{
+    left:34%;
+    top: 93%;
+    font-size:12px;
+  }
+
+  .right__arrow{
+    right:27%;
+    top: 93%;
+    
+  }
+
+  .right__arrow-p{
+    right:34%;
+    top: 93%;
+    font-size:12px;
+
+  }
+}
   

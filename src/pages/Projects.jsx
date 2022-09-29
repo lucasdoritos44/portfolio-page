@@ -3,6 +3,7 @@ import MenuBar from "../components/MenuBar";
 import ArrowsNavigation from "../components/ArrowsNavigation";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrowLeft";
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 import "./Projects.css";
 import "swiper/css";
@@ -50,6 +51,8 @@ const Projects = () => {
     }
   }
 
+  const responsive = useMediaQuery('(min-width:1100px)');
+
   return (
     <div class="contact__wrapper3">
       <div class="cover__animation3" />
@@ -68,24 +71,32 @@ const Projects = () => {
       >
         {projects.map((project, i) => (
           <SwiperSlide>
-            {i === 0 ? (
+            {i === 0 ? (<>
               <KeyboardDoubleArrowRightIcon
                 size="large"
                 className="right__arrow"
               />
+              <p className="right__arrow-p">Swipe Right</p>
+            </>
+              
             ) : (
               ""
             )}
-            {i > 0 && i < 3 ? (
+            {i > 0 && i < projects.length - 1 ? (
               <div>
-                <KeyboardDoubleArrowLeftIcon className="left__arrow" />{" "}
+                <p className="left__arrow-p">Swipe Left</p>
+                <KeyboardDoubleArrowLeftIcon className="left__arrow" />
+                <p className="right__arrow-p">Swipe Right</p>
                 <KeyboardDoubleArrowRightIcon className="right__arrow" />
               </div>
             ) : (
               ""
             )}
-            {i === 3 ? (
+            {i === projects.length - 1 ? (
+              <>
+              <p className="left__arrow-p">Swipe Left</p>
               <KeyboardDoubleArrowLeftIcon className="left__arrow" />
+              </>
             ) : (
               ""
             )}
@@ -97,6 +108,7 @@ const Projects = () => {
               description={project.description}
               dependencies={project.dependencies}
             />
+            
           </SwiperSlide>
         ))}
       </Swiper>
@@ -106,13 +118,13 @@ const Projects = () => {
       <div class={`${keyAnimation === "right" ? "cover__right" : ""}`} />
       {keyAnimation && <LoadingCounter side={keyAnimation} class="counter" />}
       <MenuBar />
-      <ArrowsNavigation
+      {responsive && <ArrowsNavigation
         keyAnimation={keyAnimation}
         upArrow="Bio"
         downArrow="Back"
         leftArrow="Contact"
         rightArrow="Skills"
-      />
+      />}
     </div>
   );
 };

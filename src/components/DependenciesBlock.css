@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    margin: 2rem;
+    margin: 1.5rem;
     background: rgba( 69, 6, 70, 0.55 );
     box-shadow: 0 8px 32px 0 rgba(36, 3, 33, 0.37);
     backdrop-filter: blur( 7px );
@@ -18,12 +18,37 @@
 }
 
 .dependency__wrapper img{
-    width:80px;
+    width:90px;
     height:auto;
 }
 
 .dependency__wrapper h3{
     font-size:21px;
     color:var(--forth)
+}
+
+@media screen and (max-width:1200px){
+    .dependency__wrapper{
+        width:120px;
+        height:230px;
+        margin: 1rem;
+    }
+
+    .dependency__wrapper h3{
+        font-size:16px;
+    }
+}
+
+@media screen and (max-width:600px){
+    .dependency__wrapper{
+        width:100px;
+        height:200px;
+        margin: 0.7rem;
+    }
+
+    .dependency__wrapper img{
+        width:60px;
+        height:auto;
+    }
 }
 

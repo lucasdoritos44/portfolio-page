@@ -94,3 +94,46 @@
       }
   }
   
+  @media screen and (max-width:1800px){
+    .skills__wrapper{
+      width:55vw;
+    }
+  }
+
+  @media screen and (max-width:1450px){
+    .skills__wrapper{
+      top:10%;
+      left:2%;
+      width:65vw;
+    }
+  }
+
+  @media screen and (max-width:1200px){
+    .skills__wrapper{
+      top:5%;
+      left:-3%;
+      width:70vw;
+    }
+
+    .skills__wrapper h2{
+      font-size:1.5em;
+    }
+  }
+
+  @media screen and (max-width:800px){
+    .skills__wrapper{
+      top:60%;
+      left:50%;
+      transform: translate(-50%,-50%);
+      width:90%;
+    }
+  }
+
+  @media screen and (max-width:600px){
+    .skills__wrapper{
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+      width:100%;
+    }
+  }

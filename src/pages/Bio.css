@@ -31,7 +31,7 @@
     position: absolute;
     top:20%;
     left:10%;
-    max-width:40%;
+    width:40%;
     overflow: hidden;
   }
 
@@ -137,4 +137,52 @@
       }
     }
   
+  @media screen and (max-width:1400px) {
+    .introduction{
+      position: absolute;
+      top:10%;
+      left:5%;
+    }
+  }
+  @media screen and (max-width:1100px) {
+    .introduction{
+      position: absolute;
+      top:10%;
+      left:5%;
+      width:50%;
+    }
+
+    .introduction__position h2{
+      font-size:1.5em;
+    }
+    
+    .introduction__position h3{
+      font-size:1.2em;
+    }
   
+    .introduction__position h4{
+      font-size:1em;
+    }
+  }
+  @media screen and (max-width:800px){
+    .introduction{
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+      width:85%;
+    }
+  }
+  @media screen and (max-width:550px){
+    .introduction__position h2{
+      font-size:1.3em;
+    }
+    
+    .introduction__position h3{
+      font-size:1.1em;
+    }
+  
+    .introduction__position h4{
+      font-size:0.9em;
+    }
+  }
