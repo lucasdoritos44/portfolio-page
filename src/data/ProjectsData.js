@@ -6,14 +6,6 @@ import FlavorosaVideo from '../assets/flavorosaVideo.mp4'
 
 export const projects = [
     {
-       link: 'https://dailycryptoapp.netlify.app',
-       link__github: 'https://github.com/lucasdoritos44/dailyCrypto',
-        name: 'Daily Crypto',
-        description: 'Daily Crypto is a website where you can find important information about Bitcoin, Ethereum and other cryptocurrencies, such as price charts, price history or useful links to dive deep into blockchain technology. Daily Crypto also brings you daily news about blockchain. In addition to cryptocurrencies, you can find here the top 100 exchanges where you can buy and hold your cryptocurrencies.',
-        dependencies: 'HTML, CSS, Javascript, React, React-chartjs, Axios, CoinGecko API, Material-UI', 
-        video: DailyCryptoVideo   
-    },
-    {
         link: 'https://get-shredded-v2.netlify.app/',
        link__github: 'https://github.com/lucasdoritos44/get-shredded',
         name: 'Get Shredded',
@@ -21,6 +13,14 @@ export const projects = [
         dependencies: 'HTML, CSS, Javascript, React, Axios, Rapid API, Material-UI', 
         video: GetShreddedVideo 
     },
+    {
+        link: 'https://dailycryptoapp.netlify.app',
+        link__github: 'https://github.com/lucasdoritos44/dailyCrypto',
+         name: 'Daily Crypto',
+         description: 'Daily Crypto is a website where you can find important information about Bitcoin, Ethereum and other cryptocurrencies, such as price charts, price history or useful links to dive deep into blockchain technology. Daily Crypto also brings you daily news about blockchain. In addition to cryptocurrencies, you can find here the top 100 exchanges where you can buy and hold your cryptocurrencies.',
+         dependencies: 'HTML, CSS, Javascript, React, React-chartjs, Axios, CoinGecko API, Material-UI', 
+         video: DailyCryptoVideo   
+     },
     {
         link: '',
        link__github: '',

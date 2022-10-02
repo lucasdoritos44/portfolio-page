@@ -52,11 +52,12 @@ const Projects = () => {
   }
 
   const responsive = useMediaQuery('(min-width:1100px)');
+  const mobile = useMediaQuery('(max-width:600px)')
 
   return (
     <div class="contact__wrapper3">
       <div class="cover__animation3" />
-      <Swiper
+      {!mobile && <Swiper
         effect={"cube"}
         grabCursor={true}
         cubeEffect={{
@@ -111,7 +112,23 @@ const Projects = () => {
             
           </SwiperSlide>
         ))}
-      </Swiper>
+      </Swiper>}
+      {
+        mobile && 
+        <div>
+          {projects.map((project => (
+            <Project
+              name={project.name}
+              link={project.link}
+              link__github={project.link__github}
+              video={project.video}
+              description={project.description}
+              dependencies={project.dependencies}
+            />
+          )))}
+          
+        </div>
+      }
       <div class={`${keyAnimation === "up" ? "cover__up" : ""}`} />
       <div class={`${keyAnimation === "down" ? "cover__down" : ""}`} />
       <div class={`${keyAnimation === "left" ? "cover__left-fixed" : ""}`} />
