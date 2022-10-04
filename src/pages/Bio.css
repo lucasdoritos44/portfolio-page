@@ -29,24 +29,24 @@
 
   .introduction{
     position: absolute;
-    top:20%;
+    top:10%;
     left:10%;
     width:40%;
     overflow: hidden;
   }
 
   .introduction__position{
-    position: relative;
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 
-  .introduction__position h2{
-    font-size:1.7em;
+  .introduction h2{
+    font-size:1.9em;
     margin-bottom: 2rem;
-    color:var(--third)
+    color:var(--third);
+    z-index:10000;
   }
   
   .introduction__position h3{
@@ -140,19 +140,11 @@
   @media screen and (max-width:1400px) {
     .introduction{
       position: absolute;
-      top:10%;
+      top:5%;
       left:5%;
-    }
-  }
-  @media screen and (max-width:1100px) {
-    .introduction{
-      position: absolute;
-      top:10%;
-      left:5%;
-      width:50%;
     }
 
-    .introduction__position h2{
+    .introduction h2{
       font-size:1.5em;
     }
     
@@ -164,6 +156,20 @@
       font-size:1em;
     }
   }
+
+
+  @media screen and (max-width:1200px) {
+    .introduction{
+      width:50%;
+    }
+  }
+
+@media screen and (max-width:900px) {
+  .introduction__position h4{
+    margin-top:2rem;
+  }
+}
+
   @media screen and (max-width:800px){
     .introduction{
       position: absolute;
@@ -172,11 +178,10 @@
       transform: translate(-50%,-50%);
       width:85%;
     }
+
   }
   @media screen and (max-width:550px){
-    .introduction__position h2{
-      font-size:1.3em;
-    }
+
     
     .introduction__position h3{
       font-size:1.1em;

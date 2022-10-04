@@ -15,13 +15,7 @@
     z-index:100;
   }
   
-  .contact__form-h2{
-    font-size:44px;
-    color: var(--third);
-    position: absolute;
-    top:12%;
-    left:15%;
-  }
+
   
   .cover__left-fixed{ 
     background-color: var(--sixth);

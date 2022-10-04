@@ -122,10 +122,16 @@
 
   @media screen and (max-width:800px){
     .skills__wrapper{
-      top:60%;
-      left:50%;
-      transform: translate(-50%,-50%);
+      top:5%;
+      left:0%;
       width:90%;
+    }
+    .contact__wrapper5{
+      width:100vw;
+      min-height:100vh;
+      background-color: var(--first);
+      overflow:hidden;
+      position: relative;
     }
   }
 

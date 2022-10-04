@@ -29,22 +29,22 @@ const MainPage = () => {
       setKeyAnimation("up");
       setTimeout(() => {
         navigate("/bio");
-      }, 2000);
+      }, 1500);
     } else if (e.keyCode == "40") {
       setKeyAnimation("down");
       setTimeout(() => {
         navigate("/contact");
-      }, 2000);
+      }, 1500);
     } else if (e.keyCode == "37") {
       setKeyAnimation("left");
       setTimeout(() => {
         navigate("/projects");
-      }, 2000);
+      }, 1500);
     } else if (e.keyCode == "39") {
       setKeyAnimation("right");
       setTimeout(() => {
         navigate("/skills");
-      }, 2000);
+      }, 1500);
     }
   }
 

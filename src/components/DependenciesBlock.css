@@ -41,8 +41,8 @@
 
 @media screen and (max-width:600px){
     .dependency__wrapper{
-        width:100px;
-        height:200px;
+        width:90px;
+        height:160px;
         margin: 0.7rem;
     }
 
