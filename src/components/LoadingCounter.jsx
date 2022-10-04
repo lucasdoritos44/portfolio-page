@@ -2,7 +2,7 @@ import React, {useState, useRef} from 'react'
 import { useEffect } from 'react'
 import './LoadingCounter.css'
 
-const LoadingCounter = ({start = 0, end = 100, timer = 50, side}) => {
+const LoadingCounter = ({start = 0, end = 100, timer = 10, side}) => {
     const [counter, setCounter] = useState(null)
     
     const ref = useRef(start)
@@ -16,7 +16,7 @@ const LoadingCounter = ({start = 0, end = 100, timer = 50, side}) => {
             setCounter(result);
             ref.current = result;
         }
-        setTimeout(updateCounter, 15)
+        setTimeout(updateCounter, timer)
     }
 
     useEffect(() => {
