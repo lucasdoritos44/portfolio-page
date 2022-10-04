@@ -49,7 +49,7 @@
     letter-spacing: 5px;
     font-size:4em;
     text-transform: uppercase;
-    animation: typing 3.5s steps(6) forwards;
+    animation: typing 2.5s steps(6) forwards;
     overflow: hidden;
   }
 
