@@ -1,9 +1,7 @@
 .counter__up p{
     font-size:40px;
     color:var(--first);
-    z-index:100%;
     font-weight: 700;
-
     z-index:100;
     position:absolute;
     top:50%;
@@ -14,9 +12,7 @@
 .counter__down p{
     font-size:40px;
     color:var(--second);
-    z-index:100%;
     font-weight: 700;
-
     z-index:100;
     position:absolute;
     top:50%;
@@ -27,9 +23,7 @@
 .counter__left p{
     font-size:40px;
     color:var(--second);
-    z-index:100%;
     font-weight: 700;
-
     z-index:100;
     position:absolute;
     top:50%;
@@ -40,9 +34,7 @@
 .counter__right p{
     font-size:40px;
     color:var(--second);
-    z-index:100%;
     font-weight: 700;
-
     z-index:100;
     position:absolute;
     top:50%;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MenuBar from "../components/MenuBar";
 import ArrowsNavigation from "../components/ArrowsNavigation";
 import DependenciesBlock from "../components/DependenciesBlock";
@@ -56,33 +56,31 @@ const Skills = () => {
 
   let navigate = useNavigate();
 
-  document.onkeydown = checkKey;
-
-  function checkKey(e) {
-    e = e || window.event;
-
-    if (e.keyCode == "38") {
-      setKeyAnimation("up");
-      setTimeout(() => {
-        navigate("/bio");
-      }, 1500);
-    } else if (e.keyCode == "40") {
-      setKeyAnimation("down");
-      setTimeout(() => {
-        navigate("/contact");
-      }, 1500);
-    } else if (e.keyCode == "37") {
-      setKeyAnimation("left");
-      setTimeout(() => {
-        navigate("/projects");
-      }, 1500);
-    } else if (e.keyCode == "39") {
-      setKeyAnimation("right");
-      setTimeout(() => {
-        navigate("/main");
-      }, 1500);
-    }
-  }
+  useEffect(() => {
+    window.addEventListener('keydown', (e) => {
+      if (e.keyCode == "38") {
+        setKeyAnimation("up");
+        setTimeout(() => {
+          navigate("/bio");
+        }, 1500);
+      } else if (e.keyCode == "40") {
+        setKeyAnimation("down");
+        setTimeout(() => {
+          navigate("/contact");
+        }, 1500);
+      } else if (e.keyCode == "37") {
+        setKeyAnimation("left");
+        setTimeout(() => {
+          navigate("/projects");
+        }, 1500);
+      } else if (e.keyCode == "39") {
+        setKeyAnimation("right");
+        setTimeout(() => {
+          navigate("/main");
+        }, 1500);
+      }
+    })
+  }, [keyAnimation])
 
   return (
     <div class="contact__wrapper5">
@@ -96,9 +94,9 @@ const Skills = () => {
       <ArrowsNavigation
         keyAnimation={keyAnimation}
         upArrow="Bio"
-        downArrow="Back"
+        downArrow="Contact"
         leftArrow="Projects"
-        rightArrow="Contact"
+        rightArrow="Back"
       />
       <div class="skills__wrapper">
         <h2>What I use</h2>

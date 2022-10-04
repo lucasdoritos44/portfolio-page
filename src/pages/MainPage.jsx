@@ -24,46 +24,44 @@ const MainPage = () => {
   useEffect(() => {
     setTimeout(() => {
       setHideWelcome(true);
-    }, 4000);
+    }, 3000);
     setTimeout(() => {
       setShowIntro(true);
-    }, 5000);
+    }, 3500);
     setTimeout(() => {
       setShowSecondPhase(true);
-    }, 7000);
+    }, 4000);
   }, [hideWelcome, showIntro, showSecondPhase]);
 
   let navigate = useNavigate();
   const matches = useMediaQuery('(max-width:800px)');
   console.log(matches)
 
-  document.onkeydown = checkKey;
-
-  function checkKey(e) {
-    e = e || window.event;
-
-    if (e.keyCode == "38") {
-      setKeyAnimation("up");
-      setTimeout(() => {
-        navigate("/bio");
-      }, 1500);
-    } else if (e.keyCode == "40") {
-      setKeyAnimation("down");
-      setTimeout(() => {
-        navigate("/contact");
-      }, 1500);
-    } else if (e.keyCode == "37") {
-      setKeyAnimation("left");
-      setTimeout(() => {
-        navigate("/projects");
-      }, 1500);
-    } else if (e.keyCode == "39") {
-      setKeyAnimation("right");
-      setTimeout(() => {
-        navigate("/skills");
-      }, 1500);
-    }
-  }
+  useEffect(() => {
+    window.addEventListener('keydown', (e) => {
+      if (e.keyCode == "38") {
+        setKeyAnimation("up");
+        setTimeout(() => {
+          navigate("/bio");
+        }, 1500);
+      } else if (e.keyCode == "40") {
+        setKeyAnimation("down");
+        setTimeout(() => {
+          navigate("/contact");
+        }, 1500);
+      } else if (e.keyCode == "37") {
+        setKeyAnimation("left");
+        setTimeout(() => {
+          navigate("/projects");
+        }, 1500);
+      } else if (e.keyCode == "39") {
+        setKeyAnimation("right");
+        setTimeout(() => {
+          navigate("/skills");
+        }, 1500);
+      }
+    })
+  },[keyAnimation])
 
 
   return (

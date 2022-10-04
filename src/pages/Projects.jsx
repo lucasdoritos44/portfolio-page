@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MenuBar from "../components/MenuBar";
 import ArrowsNavigation from "../components/ArrowsNavigation";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
@@ -23,33 +23,31 @@ const Projects = () => {
 
   let navigate = useNavigate();
 
-  document.onkeydown = checkKey;
-
-  function checkKey(e) {
-    e = e || window.event;
-
-    if (e.keyCode == "38") {
-      setKeyAnimation("up");
-      setTimeout(() => {
-        navigate("/bio");
-      }, 1500);
-    } else if (e.keyCode == "40") {
-      setKeyAnimation("down");
-      setTimeout(() => {
-        navigate("/contact");
-      }, 1500);
-    } else if (e.keyCode == "37") {
-      setKeyAnimation("left");
-      setTimeout(() => {
-        navigate("/back");
-      }, 1500);
-    } else if (e.keyCode == "39") {
-      setKeyAnimation("right");
-      setTimeout(() => {
-        navigate("/skills");
-      }, 1500);
-    }
-  }
+  useEffect(() => {
+    window.addEventListener('keydown', (e) => {
+      if (e.keyCode == "38") {
+        setKeyAnimation("up");
+        setTimeout(() => {
+          navigate("/bio");
+        }, 1500);
+      } else if (e.keyCode == "40") {
+        setKeyAnimation("down");
+        setTimeout(() => {
+          navigate("/contact");
+        }, 1500);
+      } else if (e.keyCode == "37") {
+        setKeyAnimation("left");
+        setTimeout(() => {
+          navigate("/main");
+        }, 1500);
+      } else if (e.keyCode == "39") {
+        setKeyAnimation("right");
+        setTimeout(() => {
+          navigate("/skills");
+        }, 1500);
+      }
+    })
+  }, [keyAnimation])
 
   const responsive = useMediaQuery('(min-width:1100px)');
   const mobile = useMediaQuery('(max-width:600px)')
@@ -138,8 +136,8 @@ const Projects = () => {
       {responsive && <ArrowsNavigation
         keyAnimation={keyAnimation}
         upArrow="Bio"
-        downArrow="Back"
-        leftArrow="Contact"
+        downArrow="Contact"
+        leftArrow="Back"
         rightArrow="Skills"
       />}
     </div>

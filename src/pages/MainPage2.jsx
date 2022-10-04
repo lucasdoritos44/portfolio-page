@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState, useEffect} from "react";
 
 import { useNavigate, Link } from "react-router-dom";
 import "./MainPage.css";
@@ -20,33 +20,31 @@ const MainPage = () => {
 
   let navigate = useNavigate();
 
-  document.onkeydown = checkKey;
-
-  function checkKey(e) {
-    e = e || window.event;
-
-    if (e.keyCode == "38") {
-      setKeyAnimation("up");
-      setTimeout(() => {
-        navigate("/bio");
-      }, 1500);
-    } else if (e.keyCode == "40") {
-      setKeyAnimation("down");
-      setTimeout(() => {
-        navigate("/contact");
-      }, 1500);
-    } else if (e.keyCode == "37") {
-      setKeyAnimation("left");
-      setTimeout(() => {
-        navigate("/projects");
-      }, 1500);
-    } else if (e.keyCode == "39") {
-      setKeyAnimation("right");
-      setTimeout(() => {
-        navigate("/skills");
-      }, 1500);
-    }
-  }
+  useEffect(() => {
+    window.addEventListener('keydown', (e) => {
+      if (e.keyCode == "38") {
+        setKeyAnimation("up");
+        setTimeout(() => {
+          navigate("/bio");
+        }, 1500);
+      } else if (e.keyCode == "40") {
+        setKeyAnimation("down");
+        setTimeout(() => {
+          navigate("/contact");
+        }, 1500);
+      } else if (e.keyCode == "37") {
+        setKeyAnimation("left");
+        setTimeout(() => {
+          navigate("/projects");
+        }, 1500);
+      } else if (e.keyCode == "39") {
+        setKeyAnimation("right");
+        setTimeout(() => {
+          navigate("/skills");
+        }, 1500);
+      }
+    })
+  },[keyAnimation])
 
 
   return (

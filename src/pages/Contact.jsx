@@ -43,7 +43,6 @@ const Contact = () => {
   })
 
 
-
   const nameChangeHandler = (event) => {
     setEnteredName(event.target.value);
   };
@@ -66,7 +65,6 @@ const Contact = () => {
     console.log(enteredEmail)
   }
 
-
   const validateEmailHandler = () => {
     setEnteredEmailIsValid(regex.test(enteredEmail))
   }
@@ -80,31 +78,32 @@ const Contact = () => {
   }
 
   const form = useRef();
-  document.onkeydown = checkKey;
-  function checkKey(e) {
-    e = e || window.event;
-    if (e.keyCode == "38") {
-      setKeyAnimation("up");
-      setTimeout(() => {
-        navigate("/bio");
-      }, 1500);
-    } else if (e.keyCode == "40") {
-      setKeyAnimation("down");
-      setTimeout(() => {
-        navigate("/main");
-      }, 1500);
-    } else if (e.keyCode == "37") {
-      setKeyAnimation("left");
-      setTimeout(() => {
-        navigate("/projects");
-      }, 1500);
-    } else if (e.keyCode == "39") {
-      setKeyAnimation("right");
-      setTimeout(() => {
-        navigate("/skills");
-      }, 1500);
-    }
-  }
+
+  useEffect(() => {
+    window.addEventListener('keydown', (e) => {
+      if (e.keyCode == "38") {
+        setKeyAnimation("up");
+        setTimeout(() => {
+          navigate("/bio");
+        }, 1500);
+      } else if (e.keyCode == "40") {
+        setKeyAnimation("down");
+        setTimeout(() => {
+          navigate("/main");
+        }, 1500);
+      } else if (e.keyCode == "37") {
+        setKeyAnimation("left");
+        setTimeout(() => {
+          navigate("/projects");
+        }, 1500);
+      } else if (e.keyCode == "39") {
+        setKeyAnimation("right");
+        setTimeout(() => {
+          navigate("/skills");
+        }, 1500);
+      }
+    })
+  },[keyAnimation])
 
   const formHandler = (e) => {
     e.preventDefault();
