@@ -6,7 +6,7 @@ import FlavorosaVideo from '../assets/flavorosaVideo.mp4'
 
 export const projects = [
     {
-        id:1,
+        id:0,
         link: 'https://get-shredded-v2.netlify.app/',
        link__github: 'https://github.com/lucasdoritos44/get-shredded',
         name: 'Get Shredded',
@@ -15,7 +15,7 @@ export const projects = [
         video: GetShreddedVideo 
     },
     {
-        id:2,
+        id:1,
         link: 'https://dailycryptoapp.netlify.app',
         link__github: 'https://github.com/lucasdoritos44/dailyCrypto',
          name: 'Daily Crypto',
@@ -24,7 +24,7 @@ export const projects = [
          video: DailyCryptoVideo   
      },
     {
-        id:3,
+        id:2,
         link: 'https://spacex-clone44.netlify.app/',
        link__github: 'https://github.com/lucasdoritos44/SpaceX-Clone',
         name: 'SpaceX Clone',
@@ -33,7 +33,7 @@ export const projects = [
         video: SpaceXCloneVideo 
     },
     {
-        id:4,
+        id:3,
         link: 'https://blackjack-ld44.netlify.app/',
         link__github: 'https://github.com/lucasdoritos44/Blackjack',
         name: 'Blackjack Game',
@@ -42,7 +42,7 @@ export const projects = [
         video: BlackjackVideo
     },
     {
-        id:5,
+        id:4,
         link: 'https://flavorosa.netlify.app/',
         link__github: 'https://github.com/lucasdoritos44/Flavorosa',
         name: 'Flavorosa Restaurant',
@@ -51,9 +51,9 @@ export const projects = [
         video: FlavorosaVideo
     },
     {
-        id:6,
+        id:5,
         link: '',
-       link__github: '',
+        link__github: '',
         name: 'Hunters Lair',
         description: 'Hunters Lair is fully responsive online shop with working payments', 
         tools: 'HTML, CSS, Javascript, NextJS', 
