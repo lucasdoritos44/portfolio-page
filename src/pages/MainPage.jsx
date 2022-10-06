@@ -3,17 +3,14 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./MainPage.css";
 
-import FbLogo from "../assets/facebook.ico";
 import GithubLogo from "../assets/github.png";
 import LinkedinLogo from "../assets/linkedin.ico";
-import telegramLogo from '../assets/telegram-logo.ico'
-
+import telegramLogo from "../assets/telegram-logo.ico";
 
 import LoadingCounter from "../components/LoadingCounter";
 import MenuBar from "../components/MenuBar";
 import ArrowsNavigation from "../components/ArrowsNavigation";
 
-import useMediaQuery from '@mui/material/useMediaQuery';
 
 const MainPage = () => {
   const [hideWelcome, setHideWelcome] = useState(false);
@@ -34,16 +31,14 @@ const MainPage = () => {
   }, [hideWelcome, showIntro, showSecondPhase]);
 
   let navigate = useNavigate();
-  const matches = useMediaQuery('(max-width:800px)');
-  console.log(matches)
 
   useEffect(() => {
-    window.addEventListener('keydown', (e) => {
+    window.addEventListener("keydown", (e) => {
       if (e.keyCode == "38") {
         setKeyAnimation("up");
-        setTimeout(() => {
-          navigate("/bio");
-        }, 1500);
+          setTimeout(() => {
+            navigate("/bio");
+          }, 1500);
       } else if (e.keyCode == "40") {
         setKeyAnimation("down");
         setTimeout(() => {
@@ -60,9 +55,34 @@ const MainPage = () => {
           navigate("/skills");
         }, 1500);
       }
-    })
-  },[keyAnimation])
+    });
+  }, [keyAnimation]);
 
+  const setAnimationBio = () => {
+    setKeyAnimation("up");
+    setTimeout(() => {
+      navigate("/bio");
+    }, 1500);
+  };
+
+  const setAnimationContact = () => {
+    setKeyAnimation("down");
+    setTimeout(() => {
+      navigate("/contact");
+    }, 1500);
+  };
+  const setAnimationSkills = () => {
+    setKeyAnimation("right");
+    setTimeout(() => {
+      navigate("/skills");
+    }, 1500);
+  };
+  const setAnimationProjects = () => {
+    setKeyAnimation("left");
+    setTimeout(() => {
+      navigate("/projects");
+    }, 1500);
+  };
 
   return (
     <div class="mainpage__wrapper">
@@ -84,30 +104,43 @@ const MainPage = () => {
         )}
         {showIntro && (
           <div class="intro__wrapper">
-            <MenuBar />
+            <MenuBar setAnimationBio={setAnimationBio} setAnimationContact={setAnimationContact} setAnimationProjects={setAnimationProjects}
+            setAnimationSkills={setAnimationSkills}/>
             <div class="second__phase">
               <ArrowsNavigation
-               keyAnimation={keyAnimation} 
-               upArrow="Bio" 
-               downArrow="Contact" 
-               leftArrow="Projects"
-               rightArrow="Skills"/>
+                keyAnimation={keyAnimation}
+                upArrow="Bio"
+                downArrow="Contact"
+                leftArrow="Projects"
+                rightArrow="Skills"
+              />
               <div class="second__phase-link-bar">
                 <div className="second__phase-link-bar_contact">
-                  <Link to="contact"><h2>Contact me</h2></Link>
+                  <Link to="contact">
+                    <h2>Contact me</h2>
+                  </Link>
                 </div>
                 <div className="second__phase-link-bar_icons">
-                 <a href='https://www.facebook.com/profile.php?id=100014593084077' target="_blank" rel="norefferer">
-                 <img src={FbLogo} alt="fb-logo" class="icon"/>
-                 </a>
-                  <a href="https://github.com/lucasdoritos44" target="_blank" rel="norefferer">
-                  <img src={GithubLogo} alt="github-logo" class="icon" />
+                  <a
+                    href="https://github.com/lukaszjesionowski44"
+                    target="_blank"
+                    rel="norefferer"
+                  >
+                    <img src={GithubLogo} alt="github-logo" class="icon" />
                   </a>
-                  <a href="https://www.linkedin.com/in/%C5%82ukasz-jesionowski-56ba2324b/" target="_blank" rel="norefferer"> 
-                  <img src={LinkedinLogo} alt="linkedin-logo" class="icon" />
+                  <a
+                    href="https://www.linkedin.com/in/%C5%82ukasz-jesionowski-56ba2324b/"
+                    target="_blank"
+                    rel="norefferer"
+                  >
+                    <img src={LinkedinLogo} alt="linkedin-logo" class="icon" />
                   </a>
-                  <a href="https://t.me/lucasdoritos44" target="_blank" rel="norefferer"> 
-                  <img src={telegramLogo} alt="telegram-logo" class="icon" />
+                  <a
+                    href="https://t.me/lucasdoritos44"
+                    target="_blank"
+                    rel="norefferer"
+                  >
+                    <img src={telegramLogo} alt="telegram-logo" class="icon" />
                   </a>
                 </div>
               </div>
@@ -125,7 +158,7 @@ const MainPage = () => {
             <div className="intro__third-line">
               <div class="intro__third-line-position">
                 <h3>
-                Let's build something &nbsp;<p>creative</p>&nbsp; together
+                  Let's build something &nbsp;<p>creative</p>&nbsp; together
                 </h3>
               </div>
             </div>

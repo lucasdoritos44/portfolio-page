@@ -407,7 +407,7 @@
     }
 
     .second__phase-link-bar{
-      width:100vw;
+      width:60vw;
     }
     .intro__first-line{
       left:10%;
@@ -496,7 +496,7 @@
   margin-right: 1rem;
 }
 .intro__first-line-position h3{
-  font-size:1.4em;
+  font-size:1.1em;
 }
 .intro__second-line-position h2{
   font-size:2em

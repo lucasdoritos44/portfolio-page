@@ -1,29 +1,42 @@
 import "./MenuBar.css";
 
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
-const MenuBar = () => {
+
+const MenuBar = ({ setAnimationBio,setAnimationProjects, setAnimationSkills, setAnimationContact,setAnimationMain }) => {
   const [showAnimatedMenu, setShowAnimatedMenu] = useState(false);
   const [showAnimatedMenuContent, setShowAnimatedMenuContent] = useState(false);
 
+  const location = useLocation()
+  const {pathname} = location
+
+  console.log(pathname)
+
   useEffect(() => {
-    window.addEventListener('keydown', (e) => {
-      if(e.keyCode === 13){
-        setShowAnimatedMenu(!showAnimatedMenu)
+    window.addEventListener("keydown", (e) => {
+      if (e.keyCode === 13) {
+        setShowAnimatedMenu(true);
         setShowAnimatedMenuContent(true);
       }
-      if(e.keyCode === 27){
-        setShowAnimatedMenu(false)
+      if (e.keyCode === 27) {
+        setShowAnimatedMenu(false);
       }
-    })
-  },[showAnimatedMenu])
+    });
+  }, [showAnimatedMenu]);
 
   const toggleNavMenu = () => {
     setShowAnimatedMenu(!showAnimatedMenu);
     setShowAnimatedMenuContent(true);
   };
 
+  const navBarIds = {
+    projects: '/projects',
+    bio: '/bio',
+    contact: '/contact',
+    skills: '/skills',
+    main: '/main'
+  }
   return (
     <nav class="menu__bar-wrapper">
       <div
@@ -31,23 +44,11 @@ const MenuBar = () => {
       >
         {showAnimatedMenuContent && (
           <ul>
-            <Link to="/projects" class="hamburger__bar-links"
-             tabindex="33"
-            >
-              <li>My projects</li>
-            </Link>
-            <Link to="/bio">
-              <li>Bio</li>
-            </Link>
-            <Link to="/contact">
-              <li>Contact</li>
-            </Link>
-            <Link to="/skills">
-              <li>Skills</li>
-            </Link>
-            <Link to="/main">
-              <li>Back</li>
-            </Link>
+              {pathname !== navBarIds.projects ? <li tabIndex="5" id={navBarIds.projects} onClick={setAnimationProjects}>My projects</li> : ''}
+              {pathname !== navBarIds.bio ? <li tabIndex="5" id={navBarIds.bio} onClick={setAnimationBio}>Bio</li> : ''}
+              {pathname !== navBarIds.contact ? <li tabIndex="5" id={navBarIds.contact} onClick={setAnimationContact}>Contact</li> : ''}
+              {pathname !== navBarIds.skills ? <li tabIndex="5" id={navBarIds.skills} onClick={setAnimationSkills}>Skills</li> : ''}
+              {pathname !== navBarIds.main && pathname!== '/' ? <li tabIndex="5" id={navBarIds.main} onClick={setAnimationMain}>Back</li> : ''}
           </ul>
         )}
       </div>

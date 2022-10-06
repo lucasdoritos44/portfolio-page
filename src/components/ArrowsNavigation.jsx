@@ -8,7 +8,6 @@ import { AiOutlineArrowUp } from "react-icons/ai";
 
 const ArrowsNavigation = ({keyAnimation, upArrow, downArrow, leftArrow, rightArrow}) => {
 
-  console.log(keyAnimation)
 
   return (
     <div class="second__phase">

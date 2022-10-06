@@ -6,6 +6,7 @@ import FlavorosaVideo from '../assets/flavorosaVideo.mp4'
 
 export const projects = [
     {
+        id:1,
         link: 'https://get-shredded-v2.netlify.app/',
        link__github: 'https://github.com/lucasdoritos44/get-shredded',
         name: 'Get Shredded',
@@ -14,6 +15,7 @@ export const projects = [
         video: GetShreddedVideo 
     },
     {
+        id:2,
         link: 'https://dailycryptoapp.netlify.app',
         link__github: 'https://github.com/lucasdoritos44/dailyCrypto',
          name: 'Daily Crypto',
@@ -22,15 +24,7 @@ export const projects = [
          video: DailyCryptoVideo   
      },
     {
-        link: '',
-       link__github: '',
-        name: 'Hunters Lair',
-        description: 'Hunters Lair is fully responsive online shop with working payments', 
-        dependencies: 'HTML, CSS, Javascript, NextJS', 
-        video: '',
-        img: '' 
-    },
-    {
+        id:3,
         link: 'https://spacex-clone44.netlify.app/',
        link__github: 'https://github.com/lucasdoritos44/SpaceX-Clone',
         name: 'SpaceX Clone',
@@ -39,6 +33,7 @@ export const projects = [
         video: SpaceXCloneVideo 
     },
     {
+        id:4,
         link: 'https://blackjack-ld44.netlify.app/',
         link__github: 'https://github.com/lucasdoritos44/Blackjack',
         name: 'Blackjack Game',
@@ -47,11 +42,22 @@ export const projects = [
         video: BlackjackVideo
     },
     {
+        id:5,
         link: 'https://flavorosa.netlify.app/',
         link__github: 'https://github.com/lucasdoritos44/Flavorosa',
         name: 'Flavorosa Restaurant',
         description: 'Fully responsive fake restaurant website',
         dependencies: 'HTML, CSS, Javascript, React', 
         video: FlavorosaVideo
-    }
+    },
+    {
+        id:6,
+        link: '',
+       link__github: '',
+        name: 'Hunters Lair',
+        description: 'Hunters Lair is fully responsive online shop with working payments', 
+        dependencies: 'HTML, CSS, Javascript, NextJS', 
+        video: '',
+        img: '' 
+    },
 ]

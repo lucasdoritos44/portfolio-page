@@ -43,7 +43,7 @@
   }
 
   .introduction h2{
-    font-size:1.9em;
+    font-size:2.2em;
     margin-bottom: 2rem;
     color:var(--third);
     z-index:10000;
@@ -145,7 +145,7 @@
     }
 
     .introduction h2{
-      font-size:1.5em;
+      font-size:1.8em;
     }
     
     .introduction__position h3{

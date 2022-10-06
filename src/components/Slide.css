@@ -1,0 +1,172 @@
+.slide__wrapper{
+  position:absolute;
+  top:7%;
+  left:-2%;
+  width:75%;
+  animation: slideAnimation 0.5s ease;
+}
+
+.slide__title{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height:7vh;
+  color:var(--second);
+  position: absolute;
+  width:100%;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.slide__button{
+  position: absolute;
+  top:80%;
+  left:50%;
+  transform:translate(-50%,-50%);
+/* From https://css.glass */
+background: rgba(65, 64, 64, 0.54);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6px);
+-webkit-backdrop-filter: blur(6px);
+border: 1px solid rgba(65, 64, 64, 0.29);
+  color:var(--second);
+  padding:1.5rem 2rem;
+  border-radius:12px;
+  border:none;
+  font-size:16px;
+}
+
+.slide__button{
+  cursor:pointer;
+}
+
+.slide__video{
+  width:100%;
+  height:100%;
+}
+
+.slide__overlay{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color: rgba(0,0,0,0.85);
+animation: hoverAnimation 0.3s ease;
+}
+
+.slide__description{
+  position: absolute;
+  top:45%;
+  left:50%;
+  width:55%;
+  transform: translate(-50%,-50%);
+  padding:1rem;
+  z-index:10;
+  color:var(--second);
+}
+
+.slide__desc{
+  margin-bottom:3rem;
+}
+
+.slide__description h3{
+  padding-left:1rem;
+  margin-bottom: 0.5rem;
+}
+
+.slide__links{
+  margin-top:2rem;
+}
+
+.slide__links a{
+  color:var(--second);
+  transition: 0.3s;
+  margin-bottom: 0.5rem;;
+}
+
+.slide__links a:hover{
+  transform: translate(30px,0px)scale(1.1);
+  
+}
+
+.close__icon{
+  color:var(--second);
+  z-index:10;
+  position: absolute;
+  top:-20%;
+  right:5%;
+}
+
+.close__icon:hover{
+  cursor:pointer;
+}
+
+.slide__links{
+  display:flex;
+  flex-direction: column;
+}
+
+.lower__overlay{
+  position: absolute;
+  bottom:0%;
+  left:0%;
+  width:100%;
+  height:10vh;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 1;
+  color:white;
+}
+
+@keyframes hoverAnimation{
+  0%{
+    opacity:0;
+  }
+
+  100%{
+    opacity:1;
+  }
+}
+
+@keyframes slideAnimation {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width:1400px){
+  .slide__wrapper{
+    width:80%;
+  }
+
+  .close__icon{
+    top:-10%;
+  }
+}
+
+@media screen and (max-width:1200px){
+  .slide__button{
+    padding:1rem 1.5rem;
+    font-size:13px;
+  }
+  .slide__description{
+    font-size:14px;
+    width:50%;
+  }
+  
+}
+
+@media screen and (max-width:1100px){
+  .slide__wrapper{
+    width:100%;
+  }
+
+  .close__icon{
+    top:-20%;
+    right:10%;
+  }
+}
+

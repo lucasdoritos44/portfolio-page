@@ -3,7 +3,6 @@ import React, { useState, useEffect} from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./MainPage.css";
 
-import FbLogo from "../assets/facebook.ico";
 import GithubLogo from "../assets/github.png";
 import LinkedinLogo from "../assets/linkedin.ico";
 import telegramLogo from '../assets/telegram-logo.ico'
@@ -46,6 +45,31 @@ const MainPage = () => {
     })
   },[keyAnimation])
 
+  const setAnimationBio = () => {
+    setKeyAnimation("up");
+    setTimeout(() => {
+      navigate("/bio");
+    }, 1500);
+  };
+  const setAnimationContact = () => {
+    setKeyAnimation("down");
+    setTimeout(() => {
+      navigate("/contact");
+    }, 1500);
+  };
+  const setAnimationSkills = () => {
+    setKeyAnimation("right");
+    setTimeout(() => {
+      navigate("/skills");
+    }, 1500);
+  };
+  const setAnimationProjects = () => {
+    setKeyAnimation("left");
+    setTimeout(() => {
+      navigate("/projects");
+    }, 1500);
+  };
+
 
   return (
     <div class="mainpage__wrapper">
@@ -57,7 +81,8 @@ const MainPage = () => {
       {keyAnimation && <LoadingCounter side={keyAnimation} class="counter" />}
       <div class="mainpage__welcome">
           <div class="intro__wrapper">
-            <MenuBar />
+            <MenuBar setAnimationBio={setAnimationBio} setAnimationContact={setAnimationContact} setAnimationProjects={setAnimationProjects}
+            setAnimationSkills={setAnimationSkills}/>
             <div class="second__phase">
               <ArrowsNavigation 
               keyAnimation={keyAnimation} 
@@ -70,9 +95,6 @@ const MainPage = () => {
                   <Link to="../contact"><h2>Contact me</h2></Link>
                 </div>
                 <div className="second__phase-link-bar_icons">
-                <a href='https://www.facebook.com/profile.php?id=100014593084077' target="_blank" rel="norefferer">
-                 <img src={FbLogo} alt="fb-logo" class="icon"/>
-                 </a>
                   <a href="https://github.com/lucasdoritos44" target="_blank" rel="norefferer">
                   <img src={GithubLogo} alt="github-logo" class="icon" />
                   </a>

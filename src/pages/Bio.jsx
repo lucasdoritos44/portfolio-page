@@ -39,6 +39,32 @@ const Bio = () => {
     })
   }, [keyAnimation])
 
+  const setAnimationMain = () => {
+    setKeyAnimation("up");
+    setTimeout(() => {
+      navigate("/main");
+    }, 1500);
+  };
+
+  const setAnimationContact = () => {
+    setKeyAnimation("down");
+    setTimeout(() => {
+      navigate("/contact");
+    }, 1500);
+  };
+  const setAnimationSkills = () => {
+    setKeyAnimation("right");
+    setTimeout(() => {
+      navigate("/skills");
+    }, 1500);
+  };
+  const setAnimationProjects = () => {
+    setKeyAnimation("left");
+    setTimeout(() => {
+      navigate("/projects");
+    }, 1500);
+  };
+
   return (
     <div class="contact__wrapper4">
       <div class="cover__animation4" />
@@ -47,7 +73,8 @@ const Bio = () => {
       <div class={`${keyAnimation === "left" ? "cover__left" : ""}`} />
       <div class={`${keyAnimation === "right" ? "cover__right" : ""}`} />
       {keyAnimation && <LoadingCounter side={keyAnimation} class="counter" />}
-      <MenuBar />
+      <MenuBar setAnimationContact={setAnimationContact} setAnimationMain={setAnimationMain} setAnimationProjects={setAnimationProjects}
+            setAnimationSkills={setAnimationSkills}/>
       <ArrowsNavigation
         keyAnimation={keyAnimation}
         upArrow="Back"

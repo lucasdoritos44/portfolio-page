@@ -82,6 +82,31 @@ const Skills = () => {
     })
   }, [keyAnimation])
 
+  const setAnimationBio = () => {
+    setKeyAnimation("up");
+    setTimeout(() => {
+      navigate("/bio");
+    }, 1500);
+  };
+  const setAnimationContact = () => {
+    setKeyAnimation("down");
+    setTimeout(() => {
+      navigate("/contact");
+    }, 1500);
+  };
+  const setAnimationMain = () => {
+    setKeyAnimation("right");
+    setTimeout(() => {
+      navigate("/main");
+    }, 1500);
+  };
+  const setAnimationProjects = () => {
+    setKeyAnimation("left");
+    setTimeout(() => {
+      navigate("/projects");
+    }, 1500);
+  };
+
   return (
     <div class="contact__wrapper5">
       <div class="cover__animation5" />
@@ -90,7 +115,8 @@ const Skills = () => {
       <div class={`${keyAnimation === "left" ? "cover__left" : ""}`} />
       <div class={`${keyAnimation === "right" ? "cover__right-fixed" : ""}`} />
       {keyAnimation && <LoadingCounter side={keyAnimation} class="counter" />}
-      <MenuBar />
+      <MenuBar setAnimationBio={setAnimationBio} setAnimationContact={setAnimationContact} setAnimationMain={setAnimationMain}
+      setAnimationProjects={setAnimationProjects}/>
       <ArrowsNavigation
         keyAnimation={keyAnimation}
         upArrow="Bio"
@@ -100,6 +126,7 @@ const Skills = () => {
       />
       <div class="skills__wrapper">
         <h2>What I use</h2>
+       
         <div class="skills">
           {skills.map((skill) => (
             <DependenciesBlock title={skill.name} img={skill.img} notAvailable={skill.av}/>
