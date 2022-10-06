@@ -53,7 +53,7 @@ const Slide = ({
           <p className="slide__dep">{tools}</p>
           <div className="slide__links">
             <a href={link}>Click here to see a full project</a>
-            <a href={githubLink}>Click here to see a full project</a>
+            <a href={githubLink}>Click here to see a github code</a>
           </div>
         </div>
       )}
