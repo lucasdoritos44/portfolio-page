@@ -288,5 +288,30 @@
     animation:coverBackMenu 0.8s ease-out both;
     z-index: 0;
   }
+}
 
+@media (prefers-reduced-motion:reduce){
+  .hide__animated_menu{
+    animation:none;
+  }
+
+  .show__animated_menu{
+    animation:none;
+  }
+
+  .hamburger-2-close{
+    animation:none;
+  }
+
+  .animated-menu-active{
+    animation:none;
+  }
+
+  .animated-menu-disactive{
+    animation:none;
+  }
+
+  .open{
+    animation:none;
+  }
 }

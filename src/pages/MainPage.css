@@ -41,8 +41,6 @@
     animation: blinkCursor 1s steps(6) infinite;
   }
   
-
-  
   .loader h2{
     position: relative;
     color:var(--second);
@@ -526,3 +524,33 @@
     left:5%;
   }
  }
+
+ @media (prefers-reduced-motion:reduce) {
+  .second__phase-link-bar{
+    animation:none;
+  }
+
+  .second__phase-menu{
+    animation:none;
+  }
+
+  .intro__first-line-position::before{
+    display:none;
+  }
+
+  .intro__second-line-position::before{
+    display:none;
+  }
+
+  .intro__first-line-position h3{
+    animation:none
+  }
+
+  .intro__second-line-position h2{
+    animation:none;
+  }
+
+  .intro__third-line-position h3{
+    animation:none;
+  }
+}

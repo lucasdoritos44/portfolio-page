@@ -407,3 +407,13 @@ font-size:17px;
     display:none;
   }
 }}
+
+@media (prefers-reduced-motion) {
+  .arrows{
+    animation:none
+  }
+
+  .second__phase-rect{
+    animation:none;
+  }
+}

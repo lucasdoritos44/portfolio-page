@@ -143,3 +143,9 @@
       width:100%;
     }
   }
+
+  @media (prefers-reduced-motion:reduce){
+    .cover__animation5{
+      animation:none;
+    }
+  }

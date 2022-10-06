@@ -192,3 +192,25 @@
       margin-top:1rem;
     }
   }
+
+  @media (prefers-reduced-motion:reduce){
+    .cover__animation4{
+      animation:none;
+    }
+
+    .cover__up-fixed{
+      animation:none;
+    }
+
+    .introduction__position h3{
+      animation:none;
+    }
+
+    .introduction__position h4{
+      animation:none;
+    }
+
+    .introduction__position h3::before{
+      display:none;
+    }
+  }

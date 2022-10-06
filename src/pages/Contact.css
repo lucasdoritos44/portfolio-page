@@ -226,3 +226,9 @@ transform: translate(0px, 0px);
       width:37vw;
     }
   }
+
+  @media (prefers-reduced-motion:reduce) {
+    .cover__animation{
+      animation:none;
+    }
+  }
