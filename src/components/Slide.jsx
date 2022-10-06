@@ -8,7 +8,7 @@ const Slide = ({
   name,
   video,
   description,
-  dependencies,
+  tools,
   link,
   githubLink,
 }) => {
@@ -50,7 +50,7 @@ const Slide = ({
           <CloseRoundedIcon className="close__icon" onClick={closeOverlay} />
           <p className="slide__desc">{description}</p>
           <h3>{name} is made with:</h3>
-          <p className="slide__dep">{dependencies}</p>
+          <p className="slide__dep">{tools}</p>
           <div className="slide__links">
             <a href={link}>Click here to see a full project</a>
             <a href={githubLink}>Click here to see a full project</a>

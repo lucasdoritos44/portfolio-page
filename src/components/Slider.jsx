@@ -39,7 +39,7 @@ const Slider = () => {
       name={project.name}
       video={project.video}
       description={project.description}
-      dependencies={project.dependencies}
+      tools={project.tools}
       link={project.link}
       githubLink={project.link__github}
       />)}
