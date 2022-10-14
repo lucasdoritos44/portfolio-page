@@ -87,7 +87,7 @@ const Bio = () => {
         <div class="introduction__position">
           <h3>
             My name is Łukasz and I'm 25 years old. I'm a self-taught junior web
-            developer who currently lives in Łomża, Poland. I graduated from IT
+            developer who currently lives in Białystok, Poland. I graduated from IT
             High School, but back then I didn't think of becoming a
             programmer...{" "}
           </h3>{" "}
