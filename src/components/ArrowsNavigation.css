@@ -5,7 +5,7 @@
   .arrow__up-p{
     z-index:10;
       position: absolute;
-      top:17%;
+      top:15%;
       left:40%;
       font-size:24px;
       transform: translate(-50%,-50%);
@@ -20,7 +20,7 @@
       border-radius:5px;
       padding:1rem; 
       position: absolute;
-      top:23%;
+      top:21%;
       left:40%;
       transform: translate(-50%,-50%);
       color: var(--second);
@@ -31,7 +31,7 @@
   
     .arrow__down-p{
       position: absolute;
-      top:41%;
+      top:43%;
       left:40%;
       font-size:24px;
       transform: translate(-50%,-50%);
@@ -61,8 +61,8 @@
   
     .arrow__left-p{
       position: absolute;
-      top:41%;
-      left:22%;
+      top:43%;
+      left:19%;
       font-size:24px;
       transform: translate(-50%,-50%);
       color: var(--second);
@@ -78,7 +78,7 @@
       padding:1rem;  
       position: absolute;
       top:34%;
-      left:22%;
+      left:19%;
       transform: translate(-50%,-50%);
       color: var(--second);
       -webkit-box-shadow: 13px 13px 10px 5px rgba(37, 1, 39, 1);
@@ -89,8 +89,8 @@
   
     .arrow__right-p{
       position: absolute;
-      top:41%;
-      left:58%;
+      top:43%;
+      left:61%;
       font-size:24px;
       transform: translate(-50%,-50%);
       color: var(--second);
@@ -105,7 +105,7 @@
       padding:1rem;  
       position: absolute;
       top:34%;
-      left:58%;
+      left:61%;
       transform: translate(-50%,-50%);
       color: var(--second);
       -webkit-box-shadow: 13px 13px 10px 5px rgba(37, 1, 39, 1);

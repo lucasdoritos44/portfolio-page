@@ -152,7 +152,7 @@ const MainPage = () => {
             </div>
             <div className="intro__second-line">
               <div class="intro__second-line-position">
-                <h2>Junior front-end developer</h2>
+                <h2>Front-end developer</h2>
               </div>
             </div>
             <div className="intro__third-line">

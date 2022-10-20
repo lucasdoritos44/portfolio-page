@@ -43,22 +43,20 @@ const Project = ({
           <p style={{ marginTop: "3rem", fontSize: '14px', padding:'0 1rem' }}>{name} is made with:</p>
           <p className="project__dep">{dependencies}</p>
           <div className="project__links">
-            <a
-              href={link}
+            <Link to={link}
               target="_blank"
-              rel="norefferer"
+              rel="noreferrer"
               className="project__link"
             >
               Click here to see a full project
-            </a>
-            <a
-              href={link__github}
+            </Link>
+            <Link to={link__github}
               target="_blank"
-              rel="norefferer"
+              rel="noreferrer"
               className="project__link"
             >
               Click here to see the code
-            </a>
+            </Link>
           </div>
         </div>
       )}
