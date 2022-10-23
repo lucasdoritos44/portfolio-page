@@ -85,6 +85,7 @@
   }
 
   .intro__third-line-position2 p {
+    animation:background-pan 2s linear infinite;
     font-size:55px;
     background:  linear-gradient(90deg, rgba(254,133,242,1) 0%, rgba(255,141,110,1) 38%, rgba(238,233,146,1) 66%, rgba(162,161,230,1) 100%);
     background-clip: text;
@@ -161,6 +162,14 @@
   }
 
   /*Animations*/
+
+  @keyframes background-pan{
+    from{
+      background-position: 0% center;
+    } to{
+      background-position: -200% center;
+    }
+  }
   
   @keyframes typing {
     0%,90%{
