@@ -7,15 +7,6 @@ import FlavorosaVideo from '../assets/flavorosaVideo.mp4'
 export const projects = [
     {
         id:0,
-        link: 'https://get-shredded-v2.netlify.app/',
-       link__github: 'https://github.com/lucasdoritos44/get-shredded',
-        name: 'Get Shredded',
-        description: 'Get Shredded is a fully responsive website where you can find over 1000 exercises with gifs, description and youtube videos to help keeping your body in shape. You can also find there a body calculator that calculate your body fat and number of calories to grow or lose weight. ',
-        tools: 'HTML, CSS, Javascript, React, Axios, Rapid API, Material-UI', 
-        video: GetShreddedVideo 
-    },
-    {
-        id:1,
         link: 'https://daily-crypto-v2.netlify.app',
         link__github: 'https://github.com/lucasdoritos44/dailyCrypto',
          name: 'Daily Crypto',
@@ -23,6 +14,15 @@ export const projects = [
          tools: 'HTML, CSS, Javascript, React, React-chartjs, Axios, CoinGecko API, Material-UI', 
          video: DailyCryptoVideo   
      },
+    {
+        id:1,
+        link: 'https://get-shredded-v2.netlify.app/',
+       link__github: 'https://github.com/lucasdoritos44/get-shredded',
+        name: 'Get Shredded',
+        description: 'Get Shredded is a fully responsive website where you can find over 1000 exercises with gifs, description and youtube videos to help keeping your body in shape. You can also find there a body calculator that calculate your body fat and number of calories to grow or lose weight. ',
+        tools: 'HTML, CSS, Javascript, React, Axios, Rapid API, Material-UI', 
+        video: GetShreddedVideo 
+    },
     {
         id:2,
         link: 'https://spacex-clone44.netlify.app/',
